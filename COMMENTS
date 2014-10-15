@@ -1,0 +1,805 @@
+Author: LRP
+Date: 22-08-2014
+Description:
+Comments for the NGC6822 RSG paper
+Draft date: 21-08-2014
+
+Key:
+comments with '#' have been implemented
+Answers/retorts are marked with '%'
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+--- Round 3:
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Hi Lee,
+
+I have no other comments beyond what has been discussed by Annette, Rolf
+& Chris. Please do tread a bit carefully at the end of 6.3, and refer to
+Davies et al 2013 where we show how the band strengths change with Z.
+They are basically on a hair-trigger to Z, Teff, log(g) in RSGs and so
+are poor indicators of anything!
+
+Cheers, Ben
+
+---------------------------------------------------------------------------
+Hi Maria, Annette
+
+Thanks both for your scrutiny of the 6822 draft - good to have your
+different perspectives to strengthen our arguments (and to explain more
+clearly what we mean in places!)
+
+
+Maria, one specific point...
+
+> - The conclusion in the last para of Sec 6.3: 'The trend in spectral 
+> type (or strength of the TiO absorption features) can be naturally 
+> explained by the decreasing abundance of the TiO molecule in lower 
+> metallicity environments.'
+>
+> I do not see connection between spectral type and metallicity. First of 
+> all, the strength of TiO depends at the same time on Teff, log(g), 
+> [Fe/H], and individual abundance of Ti and O. So if the parameters were 
+> determined correctly, one shall not see any special trend of spectral 
+> type (or luminosity, or, equivalently, surface gravity) and Teff.
+
+I agree that we need to be more careful with the explanation here.  My
+simplistic way of thinking about this is that if the Teffs for RSGs are
+invariant of Z, then as we move to lower Z, the TiO bands get weaker
+(abundance effects) and the spectral types of the stars get earlier - this
+explains Roberta Humphreys (and latterly Massey/Levesque) observations
+that the latest spectral type for RSGs in galaxies shifts to earlier types
+with lower Z.  (That said, just to complicate things, there is also the
+apparent TiO vs luminosity correlation from Ben's Teff paper...)
+
+cheers,
+Chris
+---------------------------------------------------------------------------
+Hi Rolf
+
+> The direct evidence for accretion or stripping is indeed compelling.
+> However, I find it striking that the closed box model gives the right
+> metallicity. Usually, models with infall or winds produce lower
+> metallicity unless in the case of accretion the accreted gas is metal
+> rich.
+
+I agree, but do think the paper will benefit from us pointing
+out this somewhat surprising convergence.
+
+Thanks
+Annette
+---------------------------------------------------------------------------
+Hi Anette,
+
+The direct evidence for accretion or stripping is indeed compelling.
+However, I find it striking that the closed box model gives the right
+metallicity. Usually, models with infall or winds produce lower
+metallicity unless in the case of accretion the accreted gas is metal
+rich.
+
+Cheers
+
+Rolf
+---------------------------------------------------------------------------
+Hi Lee
+
+Apologies for the delay in getting comments.
+
+The main comment I have is that I think you should say a bit
+more about (the peculiar properties of..)
+# N6822 in the introduction
+and then have a caveat when you get to later sections about
+the fact that N6822 may not be a good example of a closed box
+system. 
+However I think you should still keep the calculation
+in as it is illustrative and informative.
+
+# In particular, you should comment in the intro (somewhere in
+# para 4?) about Blok & Walter 2000 ApJL 537 95 who obtained
+# a precision HI map, and found a very
+# extended HI disk with tidal arms and a possible HI
+# companion.  Komiyama et al 2003 ApJL 590 17 and
+# de Blok & Walter 2003 MNRAS 341L 39 showed
+# that there are blue stars associated with the extended HI gas, and
+# that these stars and the HI disk are oriented perpendicular
+# to the distribution of old halo stars  -- which led
+# Demers et al 2006 ApJL 636 85 to label the system
+# as "polar ring".  Later work (Hwang et al 2011 ApJ
+# 738 58 and Huxor et al 2013 MNRAS 429 1039)  showed
+# that there is a population of remote star clusters which also
+# trace out a distribution which is perpendicular to that of
+# the HI and young stars.
+
+I've attached a figure from Huxor just to show what I mean
+about the weird configuration.  It strongly suggests that
+N6822 has either accreted something recently, or that it has been
+tidally stripped.. in either scenario, the closed box
+model would not really be appropriate.
+
+Other minor comments:
+
+# * abstract - do you want to expand with a sentence
+# on whether or not the lack of temperature variation
+# you find is expected?
+
+# * In Figs 2 and 3, you should in principle show (and have
+# selected on..) extinction-corrected plots (as it's not negligible
+# in the direction of this galaxy). If this is what is shown, you
+# should indicate that with the axes labels.
+
+# * In sec 2.1, be more explicit about how you used the IR
+# photometry to help prune your sample down.. and explain
+# how the 19 stars were selected from the 58.
+
+# * given that N6822 is embedded in a rotating HI disk
+# you would not expect all velocities to line up exactly. If
+# you were to plot RV versus distance along the major
+# axis (instead of just distance) then you might see
+# the systematic shift from one side to the other (and
+# possibly be able to better assess the likelihood of
+# genuine outliers).
+% This doesn't seem to show anything useful
+
+# * start of Sec 2.3, you might want to comment
+# that N6822 lies at low Galactic latitude (b~-18)
+# so MW contamination is especially important.
+
+* a stylistic point, but you could probably put
+the means and dispersions in the upper left of
+the plots in Fig 7 instead of the caption.
+
+# * concerning some of the points Maria raised
+# - I agree that the term "evolution" is being used in a strange way. Either
+# "difference" or "variation" might be better.
+
+- I wonder if radial migration would be relevant in a system like
+this where there are no spiral arms (which act to drive the migration).
+I think the stellar motions being referred in Sec 6.2, p8
+must be of a different type - it might be good to specify?
+
+Thanks!
+Annette
+
+---------------------------------------------------------------------------
+Dear Lee,
+
+I went through the paper. It looks really interesting!
+
+Here some suggestions for improvement, mostly to make the text clearer and more logical.
+
+- abstract
+# — From comparison…; we find evidence for a low —> It is better to split the two statements into
+# two sentences.
+
+—
+'Using chemical evolution models we compare our results for young stars to the metallicity of older stellar populations within this galaxy.'
+
+# You compare the results for the young and old stellar populations
+# (and you do not need chemical evolution models for this),
+# but you need CE models to explain why the mean metallicity of the two *differ.*
+
+—
+'we show that there appears to be no temperature evolution of RSGs with respect to metallicity.'
+
+Even after having read the whole paper, I do not understand the idea of this conclusion.
+Why shall there be temperature evolution of RSGs as a function of Teff?
+
+Could you create a clean figure to support this
+# Good idea, I should show the difference in evolutionary models!
+
+# and perhaps add one or two clarifying statements in the abstract?
+
+
+- introduction
+# — para 1
+# RSGs could become.. -> RSGs are
+
+— para 2
+# In this context, the K-band …will be a powerful —> is a powerful
+
+— para 5
+# Description of section 4 is missing?
+
+- Section 4
+— para 1, page 3
+Foreground Galactic stars with similar spectral types (i.e. M-dwarfs) could potentially contaminate our sample which could influence metallicity measurements and hence, bias our conclusions.
+
+replace by
+
+# Foreground Galactic stars with similar spectral types (i.e. M-dwarfs) could
+# potentially contaminate our sample which could bias our conclusions.
+
+(NB: this could influence not only [Z] measurements, but all stellar parameters)
+
+# — para 2
+# last sentence ‘radially velocities’ replace by ‘radial velocities’
+
+-  Section 5
+— page 4
+Davies 2014 —> what paper do you mean? Is this in prep.?
+(Rolf also commented on this)
+
+
+— page 4, para 1
+Thus, pending a more rigorous treatment of the data (e.g. to take into account the changing spec- tral resolution across the array), we exclude these objects from our analysis.
+
+# Which ‘these’ objects? There is some logics missing here.
+
+# — page 4, para 2
+# ‘in some strongest lines’ —> ‘in the strongest Fe, Ti, and Si atomic lines’.
+
+
+# However, the two strong magnesium lines are excluded from the analysis as these lines are known to be affected strongly by non-LTE ef- fects
+# (see figure 5 where the two MgI lines are system- atically under- and over-estimated respectively).
+
+—> replace by
+
+# The two strong magnesium lines are excluded from the analysis as these lines are known to be affected strongly by non-LTE effects
+# (see figure 5 where the two MgI lines are systematically under- and over-estimated respectively). 
+# The non-LTE line formation of Mg I lines will be explored in our paper in prep.
+
+
+# — page 7, last para
+# To investigate spatial variations in chemical abun- dance, the radial distance from the centre 
+# of NGC 6822 is compared to the metallicity derived for each target in Figure 9.
+
+replace by
+
+# To investigate spatial variations in chemical abundances in NGC 6822, we show the metallicities # of our RSGs as a function of radial distance from the centre of the galaxy (Fig. 9).
+
+**Important: the term average abundance and average metallicity are used throughout the text, but some explanation of the problem is given only in the mid of Sect 6.
+
+# It would be best (and less confusing) if you define the term metallicity in the introduction and use it throughout the paper.
+
+# Also the description of what parameter you actually determine from the RSG J-band spectra
+# (from para 4, sect 6.2 ‘As abundances derived from the analysis here yield a global abundance
+# [Z] which closely resembles the [Fe/H] ratio…’ ) shall go into Sect 5.2 ‘Stellar parameters’.
+
+Perhaps you could include a plot or so to support that [Z] closely resembles [Fe/H]?
+
+- Section 6.2
+You use ‘average abundance gradient’ to refer to different studies, which derive abundances of different chemical elements. While one can certainly argue that abundance gradients of different elements are similar, one shall first of all explain what type of ‘abundance’ is given in each of those papers. So paragraphs 3 and 4 shall be moved up to the beginning of the section.
+
+% But I've just moved them to section 5.2 ... I think this is for the best
+
+— para 6, page 8
+give a reference to the statement about stellar motions (you mean radial migration), e.g.
+Schoenrich & Binney
+http://adsabs.harvard.edu/abs/2009MNRAS.396..203S
+% This is a tricky one. Can I use an argument about radial migration here?
+% Need to think more on this/do more research
+
+# Fig. 8 - page 9
+# what is V/Vc = 0.4? Are those rotating evolutionary models?
+
+Fig. 9 - page 9
+# mention in the caption that black points are your RSG sample
+
+- Sect 6.3
+
+# — Para 2. Describe how do you compute luminosities for the H-R diagram plot?
+
+— The following statements are very confusing (para 2):
+
+# 'From these fig- ures, we see no evidence for an evolution in average tem- peratures of RSGs with respect to environment.'
+
+# One normally uses the term ‘evolution’ to describe evolution in time. What you mean here that 
+# stars of different mass shall attain systematically different Teff at the end of their RSG phase, 
+# such that more massive stars shall end up hotter. What do you mean by ‘environment’? In my 
+# understanding, environment refers to the ISM… (you also use the term ‘environment’ to refer to 
+# birth clouds in the last  para)
+
+'This is in contrast to current evolutionary models which display a change of ∼450K, for a M = 15M⊙ model, over a range of 0.7dex (Ekstr ̈om et al. 2012; Georgy et al. 2013).'
+What do you mean by this?
+
+I think the whole section needs to be better explained, as for now there appears to be no reason why Teff and [Z] shall correlate (usually in spectral analysis, if these two parameters correlate than it means one has a systematical error).
+
+
+— The following statement appears contradictory:
+'The observation that the models produce a lower temperature ….’
+
+
+— para 3
+What is line-free pseudo-continuum? If it is line-free, then it is continuum. Normally, pseudo-continuum
+is used to refer to a part of a spectrum which is very veiled by weak spectral lines and they merged to produce a quasi-continuum.
+
+— The conclusion in the last para of Sec 6.3:
+'The trend in spectral type (or strength of the TiO absorption features) can be naturally explained by the decreasing abundance of the TiO molecule in lower metallicity environments.’
+
+I do not see connection between spectral type and metallicity. First of all, the strength of TiO depends at the same time on Teff, log(g), [Fe/H], and individual abundance of Ti and O. So if the parameters were determined correctly, one shall not see any special trend of spectral type (or luminosity, or, equivalently, surface gravity) and Teff.
+
+- Sect 7
+# — perhaps mention in the first sentence of conclusions that you get *spectroscopy* of RSG’s’?
+# This is not evident.
+
+— para 2 (page 10)
+# We compare the derived metallicity gradient to that of pre- vious studies in this
+# and find consistent results.
+# remove ‘in this’
+
+— para 3
+'We also show, using chemical evolution models, that the aver-
+age metallicity measurement is consistent with that mea-
+sured for a population of asymptotic giant branch and red giant branch stars.’
+
+I do not agree with this. From your results, the conclusion can be made that metallicity difference between the
+old and young stellar population *could* be explained by chemical evolution of the system. But this just a possibility (based on a closed-box CE model, one of many), and does not prove that the average metallicities of young and old stars are consistent. They are different.
+
+— para 4
+'we find no evidence for a systematic evolution in average effective temperature with respect to metallicity.'
+
+As above, the term ‘evolution’ dose not fit here. Replace by ‘difference’
+
+# — The following is very difficult to understand:
+# 'This is in contrast with current evolutionary models which display a shift in RSG
+# temperature of ∼450K. We argue that an observed shift in average spectral type of
+# RSGs observed over the same metallicity range (0.7dex) does not imply a shift in
+# average temperature.'
+
+# What shift is implied here? see my comments to Sect 6.3 above
+
+
+
+Otherwise, great work!
+
+kind regards,
+Maria
+
+---------------------------------------------------------------------------
+Hi Lee,
+
+Here are some first comments and suggestions.
+
+In the Abstract I suggest a slight change of the text after the first half
+of the 2nd sentence:
+
+# " ...[Z]=-0.52pm0.21, which agrees well with previous abundance studies of
+# young stars and HII-regions. We also find an indication for an abundance
+# gradient within the central 1 kpc, however with low significance because
+# of the small number of objects studied."
+
+In the Introduction and also later: Davies, 2014 ---> Davies et al., 2014
+This paper is not in the references. Change to Davies at al. 2014 to be
+submitted?
+
+Third para, Introduction. In addition to Venn+01 (which is in LTE
+with respect to Fe and O) there has been the thesis
+by Norbert Przybilla in 2002 where he also studied object m of Venn+01 in
+complete NLTE. I suggest the follwing text:
+
+# "Observations of two A-type supergiants by Venn et al. (2001) provided a
+# first estimate of stellar abundances with log (Fe/H) +12 = 7.01 pm 0.22
+# and log (O/H) = 8.36pm0.19 based on LTE line formation calculations for
+# these elements. A detailed NLTE study Przybilla (2002) for one of these
+# objects confirmed these results with 6.96pm 0.09 for iron 8.30pm0.02 for
+# oxygen, respectively. Compared to the solar abundances of 7.50 and 8.69 of
+# these elements (asplund et al., 2009) this indicates about 0.5dex lower in
+# NGC6822. A study of oxygen abundances in HII-regions by Lee et al. (2006
+# - ??? which Lee et al. 2006 is this, you have two in your references???)
+# finds a value of 8.11pm0.1 confirming the low metallicity."
+
+Cite Przybilla as Przybilla, N., 2002, Thesis, Munich University
+Observatory, Ludwig-Maximilian-University Munich.
+
+# Section 5.2: Change title --> Stellar Parameters and Metallicity
+
+# Second to last para of this section:--->
+# "in NGC 6822 is [Z]=-0.52pm0.21 ([Z] is the logarithm of metallicity
+# relative to the sun)."
+
+# We need to define [Z] somewhere.
+% now defined in the introduction
+
+Last para of this section: --->
+# " A least-squares fit to the data indicates a low-significance abundance
+# gradient within the central 1 kpc of NGC 6822 of -0.52pm0.35 dex/kpc. the
+# central metallicity of [Z]=-0.30pm0.15 derived ....
+
+# Section 6.2
+# Change title ---> Metallicity Measurements
+
+#  First sentence: --> We fine an average metallicity for NGC 6822 of
+#[Z]=...
+#add Przybilla, 2002 to the references for BSGs.
+
+# 2nd para, last sentence ---> results in a somewhat shallower gradient
+# (-0.35pm0.28dex/kpc) with a slightly reduced chi_2=...
+
+# 3rd para. I would add the following sentence at the end.
+# "At this point it is not clear whether the indication of a gradient
+# obtained from the RSGs and BSGs is just an artefact of the small sample
+# size or indicates a difference with respect to the HII-region study."
+
+# Caption Fig. 5. I would strike the MgI sentence. This is mentioned in the
+# text already.
+
+# Page 8, right column, third to last row: Strike Muschielok et al. and Venn
+# et al. This is a remnant of something.
+
+7. Conclusions.
+p10, left column, 4th to last line.
+--> is [Z]=-0.52pm0.21. We find th indication of a metallicity gradient,
+however with a low significance caused by small size of our RSG sample.
+
+I would drop or re-formulate the las paragraph of this second. Maybe Chris
+or Ben can help here.
+
+# Acknowledgements
+# Please add "RPK and JZG acknowledge support by the National Science
+# Foundation under grant AST-1108906".
+
+Cheers
+
+Rolf
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+--- Round 2:
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+Hi Lee,
+
+Just got back from my jollies.
+
+The draft is in good shape, well written. In addition to Rolf's points,
+here are my comments.
+
+# * Intro - do we want to talk about a/Fe ratios, when we don't have that
+# capability up and running in this paper? You are promising something
+# that we aren't delivering here.
+
+# * Sect 2.3 and Fig 4 - shouldn't we move this to after the data
+# reduction part?
+# Shouldn't we comment on the lack of an absolute wavelength calibration?
+# It's conspicuous by its absence at the moment.
+
+In Fig 4, wouldn't a median be better than a mean, given the large outlier?
+
+* Sect 4.2 -
+# - reminder -> remainder
+# - Change sentence in para 2 to 'Bolometric Corrs are computed using the
+# calibration in Davies et al 2013.'
+
+# * Fig 6 - mark on the diagnostic lines
+
+# * Fig 7 - an OCD point, but it would be nice to have the x and y axes
+# the same size given that they are same quantities on each axis. In IDL
+# you do '/isotropic', but I guess you use something more modern like
+# 'python' or 'dubstep'...
+
+# * The bits where you quote the abundance gradients (e.g. caption of Fig
+# 9) make absolutely no sense to me. Is this the way people normally do
+# it?
+Also, I think you keep missing the '\' in \arcsec.
+* Not sure what is meant by this comment ...
+
+# * Probably merge Figs 9 and 10.
+
+* Sect 5.3 - we need to tread a bit carefully here.
+# - As we heard at Raphael's meeting the other week, the models don't
+# really 'predict' the temperatures of the RSGs. Rather, when they assume
+# a Solar value for the convective mixing length parameter for all stars
+# at all metallicities and masses, they find that the stars get smaller at
+# higher Z, which gives you higher Teffs. We don't see this, would *could*
+# imply that the way we treat convection in one-dimension does not hold at
+# lower Z.
+
+# - I would say that we are more confident in our J-band Teffs than in the
+# TiO Teffs because the NIR atomic lines (and neighbouring
+# pseud0-continuum) form close to the star's photosphere, defined to be
+# where tau_Ross = 2/3, where the local temperature is roughly Teff. The
+# TiO bands on the other hand form out at tau_Ross = 0.001 or something
+# like that, much higher in the atmosphere where the local temperature is
+# much lower than Teff (ask Maria or Bertrand for an accurate number).
+
+* Remind me - I need to send you the LMC/SMC results again, I found a
+small bug in the code whilst at the beach, it only changes a couple of
+stars by a small amount, and doesn't affect any of yours at all.
+
+Cheers, Ben.
+---------------------------------------------------------------------------
+Hi Lee,
+
+I plan to work on the NGC6822 text later today (I have to finish the
+re-submission of my Mauna Kea Keck LRIS NGC 4258 proposal first which will
+take a few hours). In the meantime, can you check a few things:
+
+I realize that you find an abundance gradient now (Fig.9). You only give
+the values for the gradient in the caption and you claim it is in dex/kpc.
+This means that R in the formula is then R in kpc and not arcseconds. Is
+this correct? If yes, this is a pretty steep gradient equivalent to
+-0.58 dex/R_25, but there are other examples of galaxies in the local
+universe with similar values as I can discuss in the text. But I need to
+be certain that my interpretaion of your result is correct.
+
+In Fig.10 you claim that there is no gradient. Is this a remnant form
+before. Did you make a test whether adding the two Venn et al. objects or
+the Muschielok objects or both would change the gradient results. by the
+way, I think that the Muschielok values are not really an abundance
+determination, but rather a demonstration that -0.5 is in the ball park.
+
+On page 5 you say "the central metallicity derived using the least-squares
+fit remains consistent with the average metallicity assuming no gradient".
+What do you mean by that?
+
+Anyway, I will work on my text a little later.
+
+# Just one more little point. The most recent Asplund et al oxygen abundance
+# of the sun is from the 2009 ARAA review arcticle and it is
+# 12+log(O/H)=8.69
+
+Cheers
+
+Rolf
+---------------------------------------------------------------------------
+
+Hi Lee,
+
+Here are a few more suggestions for the paper in addition to my emails
+from yesterday.
+
+I think the whole section 5.2 needs to be checked and re-arranged. I suggest first to discuss average metallicities of RSGs and BSGs and HII and after that gradients.
+
+I would briefly explain that RSG metallicities [Z] closely resemble [Fe/H] and, while they are also affected by Si, Mg, Ti, we assume [Z]=[Fe/H] for the discussion. No need to introduce a factor A, which we then set equal to unity anyway. I would then explain that the HII work yields oxygen abundances which we take as proxies for [Z] by introducing the solar oxygen abundance {12+log(O/H)}_sun=8.69 (Asplund et al., 2009, ARAA) through the relation [Z]=12+log(O/H)-8.69.
+I would not describe this as a big problem, it is a bit a comparison of apples and pears, but that is all we can do. It basically assumes that the relative distribution of elements is as in the sun.
+
+For the gradients, you need to check whether the A and B supergiants change the picture. In that regard the metallicities of the B supergiants in Muschielok et al. are not the result of a real metallicity fit, it is an by I comparison which model fitted best and that was the one with the metallicity quoted (at least this is what I recall from the time when I wrote the paper). You could also produce a plot which includes the HII regions and see how that looks like.
+
+If your gradient remains stable as is, then it is a relatively steep gradient. I am just finishing a paper with an IfA graduate student (Ho, Kudritzki, Kewley et al., to be submitted) where we find from a sample of 49 local field star-forming galaxies an average gradient of -0.39 dex/R25 with a standard deviation of 0.18. We have also looked at the ~100 field galaxies in Pilyugin et al., 2014 AJ, 147, 131 and find an average gradient of -0.32 dex/R25 with a standard deviation of 0.20. This can be nicely explained by the distribution of stellar mass and gas mass in galaxies and very simple chemical evolution models.
+
+I would then discuss the result of the recent AGB star study, first the average value and then the (non-)gradient.
+
+At this point I then suggest to add the following text:
+
+-------- suggested text begin
+
+The low metallicity of the young stellar population and the ISM in NGC 6822 can be easily understood as a consequence of the fact that it is a relatively gas rich galaxy with a mass M$_{HI}$ = 1.38~10$^{8}$ M_${\odot}$ (Koribalski et al., 2004) and a total stellar mass of M$_{*)$ = 1~10$^{8}$ M$_{\odot}$ (Weisz et al., 2014). The simple closed box chemical evolution model relates the metallicity mass fraction Z(t) at any time to the ratio of stellar to gas mass $M_{*}\over M_{g}$ through
+
+\begin{equation}\label{closed-box}
+Z(t) = {y \over 1-R } \ln \left[ 1 + {M_{*}(t)\over M_{g}(t)}  \right],
+\end{equation}
+
+where y is the fraction of metals per stellar mass produced through stellar nucleosynthesis (the so-called yield) and R is the fraction of stellar mass returned to the ISM through stellar mass-loss. According to Kudritzki et al. (2014, in preparation) the ratio y/(1-R) can be empirically determined from the fact that the metallicity of the young stellar population in the solar neighborhood is solar with a mass fraction Z$_{\odot} =0.014 (Nieva \& Przybilla, 2012). With a solar neighborhood ratio of stellar to gas mass column densities of 4.48 (Wolfire et al., 2003 (this is ApJ 587, 278), Bovy \& Rix, 2013 (this is ApJ 779, 115)) one then obtains y/(1-R) = 0.0082 = 0.59Z$_{\odot} with an uncertainty of 15 percent dominated by the the 0.05 dex uncertainty of the metallicity determination of the young population in the solar neighborhood.
+
+Accounting for the presence of helium and metals in the neutral interstellar gas we can turn the observed HI mass in NGC 6822 into gas mas via M$_{g}$ = 1.36 M$_{HI}$ and use the simple closed box model to predict a metallicity of [Z] = -0.6 $\pm$0.05 in good agreement with our value obtained from RSG spectroscopy.
+
+As discussed above the older stellar population of AGB stars has a metallicity roughly 0.7 dex lower than what we measure for the RSGs. In the framework of the simple closed box model this would correspond to a period in time where the ratio of stellar to gas mass was 0.07 (much lower than the present value of 0.53) and the stellar mass was only 0.19~10$^{8}$M$_{\odot}$. The present star formation rate of NGC 6822 is 0.027 M$_{\odot} (Gratier et al., 2010, Cannon et al., 2006, Israel et al., 1996). At such a high level of star formation it would have taken three Gyr to produce the presently observed stellar mass and to arrive from the average AGB-star metallicity level at the metallicity of the young stellar population, of course, again relying on the simple closed box model. With a lower star formation rate it would have taken correspondingly longer.
+
+------- suggested text end
+
+Cheers
+
+Rolf
+--
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+--- Round 1:
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Things to look at:
+
+Gallart et al 1996
+
+More discussion on science!
+---------------------------------------------------------------------------
+Rolf:
+
+Hi Lee,
+
+I just started glancing through the paper and it looks very good.
+Congratulations!
+
+I stumbled about the bold printed sentence at the end of Section 5.2. I
+think, if you can dig out estimates of the galaxies stellar mass and gas
+mass (HI and H_2) and the star formation rate either total for the galaxy
+or even spatially resolved, we can check this question using the simple
+chemical evolution models which I am presently using to understand the
+metallicity and metallicity gradients of nearby galaxies in terms of the
+spatial profiles of the ration of gas to stellar mass. This is work I am
+presently doing with I-Ting Ho as grad student at the IfA and we are in
+the process to finish two papers on this. It is in a way an extension of
+the paper by Zahid, Dima, Kudritzki et al. (2014, ApJ), which deals with
+the cosmological evolution of the mass-metallicity relationship of
+galaxies.
+
+Cheers
+
+Rolf
+---------------------------------------------------------------------------
+
+Estimates of the masses:
+
+Stellar mass (HI mass): 1.3*10^8 Msun (de Blok & Walter 2000)
+                        1.45*10^8 Msun (Koribalski et al. 2004)
+                        1.3*10^8 Msun (Weisz et al. 2014)
+Gas mass (HII mass)   :
+Molecular mass (H2)   : <1*10^7 Msun (H2; Gratier et al. 2010)
+Dynamical mass: 7.5*10^9 Msun (Hwang et al. 2014)
+                3.2*10^9 Msun (de Blok & Walter 2006; Weldrake et al. 2003)
+SFR                   : 0.026 Msun/yr (Gratier et al. 2010)*
+                        0.04  Msun/yr (Israel et al. 1996; over last 10^7 yr)
+                        0.0015Msun/yr (CAnnon et al. 2006)
+* Derived using Mdot = 5*10^-8 L(Halpha)/Lsun Msun/yr
+where L(Halpha) = 2*10^39 ergs/s (de Blok & Walter 2006)
+
+How do SFH and SFR relate?
+SFH is essentiall a SFR as a function of time and metallicitiy.
+---------------------------------------------------------------------------
+ Hi Lee,
+
+ I have quickly done the numbers. With the present gas and stellar mass I
+ obtain a metallicity [Z]=log Z/Z_sun=-0.545 with my Milky Way calibrated
+ chemical evolution closed box model. This is in very good agreement with the
+ metallicity you measure. By the way, in the paper I would express the
+ metallicity we derive as [Z] and not [Fe/H], since we measure not only iron
+ but also a lot of other lines.
+
+ With the present SFR of 0.027 M_sun per year it takes 3.7 Gyr to build up the
+ present stellar mass from zero and, thus the metals we now have. In the
+ closed box model it takes 2.8 Gyr to go at the present SFR from [Z]=-1.3 to
+ the present [Z]. With lower SFR in the past it may have taken longer. Thus, I
+ think we are good. If you want me to draft something about this in the paper,
+ I can certainly do this, once I get the next version from you. Just let me
+ know whether you want to add something along these lines.
+
+ Cheers
+
+ Rolf
+---------------------------------------------------------------------------
+Hi Lee,
+
+A very good first draft! A comments below.
+
+Cheers, Ben
+
+
+General:
+
+# * When I look at your Fig 10, I do see a slight negative gradient,
+# though if it were measured properly I can imagine that we would find an
+# error on the slope as big as the slop itself. Rather than saying
+# everywhere that there isn't a gradient, you should measure it (and the
+# error on it) and quote it. Then you could say that it is/isn't
+# consistent with no metallicity gradient, or at least say that it is small.
+
+
+# * title: I think Maria started the trend of having the title 'Red
+# Supergiants as cosmic abundance probes: blah blah', I'm wondering if we
+# should keep that trend going.
+
+* I think 'target selection' should come before 'observations'
+
+* Obs sequence is just O,S,O (... O,S,O) isn't it?
+%%% No: Sequence is O,S,O,O
+
+# * Is there an ESO programme number for these obs? If so, state it, as
+# well as the PI name.
+
+# * The sentence at the end of 2. reads like 11 of the targets turned out
+# to not be RSGs. Is that the case, or did we not observe them?
+
+
+* Table 2 - is the 'RSG' prefix to the names your addition, or did you
+get the names from somewhere else? If they are your names, best to just
+put the numbers.
+
+# Also - what is going on with the RVs? They are all the
+# same...
+
+# * Sect 2.2- which star is the outlier?
+# RSG5
+
+* Sect 3.1 - Add further comment on the end of this section.
+%%% What does this mean?
+
+* For Fig 5,
+I wonder if we should zoom in on our region (~ 1.16-1.21) to see how
+much of a big deal those little blips are.
+
+* Sect 3.3 - I think Zach found that the SNR per resolution element can
+be a bit lower than 100, say more like 80.
+%%% In Zach's paper
+"indicate that for instruments operating at resolutions of ∼3000, a S/N of ∼100 per resolution element is an ideal target for observational programs."
+
+% * Table 3 - not necessary?
+
+# * Fig 7 - what is the green line? How do these numbers compare to the
+# ETC? I'm not sure we should ultimately include this Fig in the paper,
+# but it is very informative. You should reiterate in the caption what the
+# total exposure time was.
+
+# Geen line explained and included additional sub-figure
+
+# * Sect 4.1 - be more quantitative here. At least for [Z], can you say
+# what the mean and stddev on ([Z]_3 - [Z]_24) are?
+
+%%% Included in Fig. 8 and commented on in 4(5).1
+
+* Table 5 - Something looks odd with the resolution R values between 3AT
+and 24AT. Shouldn't they be the same for both? If not, do we know why not?
+
+* Fig 8 - lose the green lines? The errors on the points are enough to
+show that the 2 sets of results are consistent with one another.
+
+* Sect 5.1 - I'm wondering if this should be moved to earlier in the
+paper, say in the observations section.
+%%% Not sure about this!
+
+# Definitely lose the last
+# sentence in the first paragraph. Could possibly say something like the
+# 300sec integrations might be a bit long for simple nod/subtract
+# reduction, but we are currently working on a method for cross IFU sky
+# subtraction (Gazak in prep).
+
+# Also, I think we should lose the last para
+# of this section.
+
+* 5.2 - Can you quote the other measurements of the metallicity
+gradient, along with errors, to show that ours is consistent?
+
+# You can include the BSGs on the plot for comparison, and to show that we
+# are consistent, but don't include them in the gradient measurement - we
+# want homogeneous samples of objects for this.
+
+Last para - don't say 'This is expected...', say 'it could be explained
+by...'. What is the reference for the -1.29 measurement? What type of
+stars are these? What is the source of the 11Gyr number?
+
+We still need to figure out if this level of enrichment over this
+timescale is sensible. I'm sure it is... Have a read of some papers by
+Francesca Matteucci and collaborators. You might learn some stuff,
+though you also might find that it is notoriously difficult to pin down
+these chemical evolution people to any quantitative predictions. Rolf
+might also have something to add here.
+
+# * Fig 11 - the red points are all exactly the same, has something gone
+# wrong there?
+
+# * Fig 12 (and text) - can you separate the samples into 4 subsamples by
+# galaxy, i.e. PerOB1, LMC, SMC, N6822, and see how they all overlap on
+# one another? The plot as it is now doesn't tell us much about any
+# environmental effect (or lack thereof).
+
+# * Fig 13 (and text) - can you somehow make clear that L is not L, but is
+# T^4/g (curly L). Also - add the errors to the y-axis. It's funny that no
+# tracks seem to extend to our data points. Worth adding a discussion (or
+# at least a comment?)
+
+---------------------------------------------------------------------------
+
+Hi gents,
+
+> * Table 1 - unnecessary for a paper, IMO (good for the old thesis tho).
+
+Ben - I know I'm instrumentation boy, but I think this is a helpful
+addition as it's (potentially) the first YJ stellar spectroscopy with KMOS
+- think this is useful information to get out there.  (Albeit we should
+note that these are the mean values across the IFUs given the variations.)
+
+
+> * Table 3 - not necessary?
+
+On reflection, agreed (although still good thesis fodder).
+
+
+> * Table 5 - Something looks odd with the resolution R values between 3AT
+> and 24AT. Shouldn't they be the same for both? If not, do we know why not?
+
+Good spot - and it feels significant that the largest difference in Z
+between the 3 and 24 arm methods is for RSG5, which also has one of the
+largest differences in R.  Curiously, for RSG5 the R(3arm) looks more in
+keeping with the results in Table 1, while for RSG55 the R(24arm) looks
+more like what we'd expect.
+
+Ben - what if you constrained the fitting parameters to the R values from
+Table 1 (taking the Ne values as they're closer in wavelength space to our
+diagnostic region) and then limit the range in R to +/-10% (say)?  Would
+enable the sort of IFU-to-IFU variations we expect, without too much
+freedom to wander off in parameter space?
+
+Chris
+
+---------------------------------------------------------------------------
