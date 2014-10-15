@@ -19,8 +19,10 @@
 
 %% manuscript produces a one-column, double-spaced document:
 
-\documentclass[manuscript]{aastex}
-% \documentclass[iop]{emulateapj}
+% \documentclass[manuscript]{aastex}
+\documentclass[iop]{emulateapj}
+\usepackage{natbib}
+\citestyle{aa}
 %% preprint2 produces a double-column, single-spaced document:
 
 %% \documentclass[preprint2]{aastex}
@@ -84,7 +86,7 @@
 %% you desire.
 
 \title{Red Supergiant Stars as Cosmic Abundance Probes: \\
-    KMOS Results in NGC\,6822}
+    KMOS Observations in NGC\,6822}
 
 %% Use \author, \affil, and the \and command to format
 %% author and affiliation information.
@@ -99,7 +101,8 @@ B. Davies\altaffilmark{3},
 R-P. Kudritzki\altaffilmark{4,5},
 J. Z. Gazak\altaffilmark{4},
 M. Bergemann\altaffilmark{6},
-B. Plez\altaffilmark{7}}
+B. Plez\altaffilmark{7},
+A. M. N. Ferguson\altaffilmark{1}}
 % \affil{Institute for Astronomy, University of Edinburgh, Royal Observatory Edinburgh, Blackford Hill, Edinburgh EH9 3HJ}
 
 % \author{C. D. Biemesderfer\altaffilmark{4,5}}
@@ -131,11 +134,11 @@ B. Plez\altaffilmark{7}}
 
 \begin{abstract}
 We present near-IR spectroscopy of red supergiant (RSG) stars in NGC\,6822, obtained with the new VLT-KMOS instrument.
-From comparisons with model spectra in the $J$-band we determine the metallicity of 11 confirmed RSGs, finding a mean value of [Fe/H] $= -0.52 \pm 0.21$ dex;
-we find evidence for a low significance, weak metallicitiy gradient within the central 1kpc of NGC\,6822 which agrees well with previous abundance studies of young stars.
-We compare results obtained with the two methods of observing telluric standard stars with KMOS
-(i.e. using all or a subset of the arms),
-finding that the more time efficient three-arm approach is sufficient for our analysis.
+From comparisons with model spectra in the $J$-band we determine the metallicity of 11 confirmed RSGs, finding a mean value of [Z] $= -0.52 \pm 0.21$ which agrees well with previous abundance studies of young stars and H\2 regions.
+We also find an indication for an abundance gradient within the central 1\,kpc, however with low significance because
+of the small number of objects studied.
+We compare our results those derived using older stellar populations and explain the discrepancy between the results using chemical evolution models.
+By comparing the physical properties determined for RSGs in NGC\,6822 with those derived using the same technique in the Galaxy and the Magellanic Clouds we show that there appears to be no temperature evolution of RSGs with respect to metallicity, in contrast to what is seen with evolutionary models spanning the same rangesge in metallicity.
 \end{abstract}
 
 %% Keywords should appear after the \end{abstract} command. The uncommented
@@ -147,30 +150,6 @@ finding that the more time efficient three-arm approach is sufficient for our an
 -- stars: abundances
 -- stars: supergiants}
 
-%% From the front matter, we move on to the body of the paper.
-%% In the first two sections, notice the use of the natbib \citep
-%% and \citet commands to identify citations.  The citations are
-%% tied to the reference list via symbolic KEYs. The KEY corresponds
-%% to the KEY in the \bibitem in the reference list below. We have
-%% chosen the first three characters of the first author's name plus
-%% the last two numeral of the year of publication as our KEY for
-%% each reference.
-
-
-%% Authors who wish to have the most important objects in their paper
-%% linked in the electronic edition to a data center may do so by tagging
-%% their objects with \objectname{} or \object{}.  Each macro takes the
-%% object name as its required argument. The optional, square-bracket
-%% argument should be used in cases where the data center identification
-%% differs from what is to be printed in the paper.  The text appearing
-%% in curly braces is what will appear in print in the published paper.
-%% If the object name is recognized by the data centers, it will be linked
-%% in the electronic edition to the object data available at the data centers
-%%
-%% Note that for sources with brackets in their names, e.g. [WEG2004] 14h-090,
-%% the brackets must be escaped with backslashes when used in the first
-%% square-bracket argument, for instance, \object[\[WEG2004\] 14h-090]{90}).
-%%  Otherwise, LaTeX will issue an error.
 
 \section{Introduction}
 
@@ -180,25 +159,27 @@ With their peak flux at
 $\sim$1\,$\mu$m and luminosities in excess of
 10$^4$\,L$_\odot$, RSGs are extremely bright in the near-IR
 (with $-$8\,$\le$\,M$_{J}$\,$\le$\,$-$11).
-Therefore, RSGs could become useful tools with which to map the chemical evolution of their host galaxies out to large distances.
+Therefore, RSGs are useful tools with which to map the chemical evolution of their host galaxies out to large distances.
 To realise this goal
-% Using a technique outlined by
-\cite{Davies10}, outline a technique to derive metallicities of RSGs at moderate resolution
+\cite{Davies10}, outlined a technique to derive metallicities of RSGs at moderate resolution
 (R$\sim$3000) and a signal-to-noise ratio (S/N)
 $\gtrsim$ 100.
 This technique has recently been refined using observations of RSGs in the Magellanic Clouds
 \citep{Davies14} and Perseus OB-1
 \citep{2014ApJ...788...58G}.
-% This technique only requires a moderate spectral resolving power ($R$\, \gtrsim 3\,000) at a signal-to-noise (S/N) of $\sim$100 and has recently been refined using observations of RSGs in the Magellanic Clouds~\citep{} and Perseus OB-1~\citep{Gazak14}.
-% Why can't I get the \gtrsim symbol?
-The exciting potential of this method compared to other tracers (e.g. blue supergiants, H\2 regions) is that it potentially provides direct abundance estimates of both iron and $\alpha$-elements (e.g., Si, Mg and Ti).
-This would provide information on the relative contributions from different nucleosynthesis channels to chemical enrichment of the host galaxy,
-i.e., the role of type II core-collapse vs. type Ia supernovae.
+Using absorption lines in the $J$-band from iron, silicon, titanium and eventually magnesium one can derive metallicity
+([Z] = log (Z/Z$_{\odot}$)) as well as other stellar parameters
+(effective temperature, surface gravity and microturbulence) by fitting model atmospheres to the observations.
+% The exciting potential of this method compared to other tracers (e.g. blue supergiants, H\2 regions) is that it potentially provides direct abundance estimates of both iron and $\alpha$-elements (e.g., Si, Mg and Ti).
+% This would provide information on the relative contributions from different nucleosynthesis channels to chemical enrichment of the host galaxy,
+% i.e., the role of type II core-collapse vs. type Ia supernovae.
+Owing to their intrinsic brightness,
+RSGs are ideal candidates for studies of extragalactic environments in the near-IR.
 
 To fully make use of the potential of RSGs for this science, multi-object spectrographs operating in the near-IR on 8-m class telescopes are essential.
 These instruments allow us to observe a large sample of RSGs in a given galaxy, at a wavelength where RSGs are brightest.
 In this context, the K-band Multi-Object Spectrograph
-\citep[KMOS;][]{2013Msngr.151...21S} at the Very Large Telescope (VLT), Chile, will be a powerful facility with which to explore our goals.
+\citep[KMOS;][]{2013Msngr.151...21S} at the Very Large Telescope (VLT), Chile, is a powerful facility with which to explore our goals.
 KMOS will enable determination of stellar abundances and radial velocities for RSGs towards distances of 10\,Mpc.
 % Using KMOS, stellar abundances and radial velocities can be measured out towards 10\, Mpc, building a picture of abundance gradients and star formation histories in external galaxies over their entire spatial extent.
 Further ahead, a near-IR multi-object spectrograph on a 40-m class telescope, combined with the excellent image quality from adaptive optics,
@@ -206,40 +187,52 @@ will enable abundance estimates for individual stars in galaxies out to tens of 
 a significant volume of the local universe containing entire galaxy clusters
 \citep{Evans11}.
 
-% With a modest part of the guaranteed time observation with KMOS we will observe RSGs in four different galaxies
-% (WLM, NGC\,3109, NGC\,300, and NGC\,55) spanning a range of distances (0.9 to 2\,Mpc) and chemical environments.
-% Our longer-term plan is an ambitious general observation proposal to survey a large
-% number of galaxies in the Local Volume, motivated by the twin goals of
-% investigating their abundance patterns, while also calibrating the
-% relationship between galaxy mass and metallicity in the Local Group.
-
-Here we present KMOS observations of RSGs in the dwarf irregular galaxy NGC\,6822 at a distance of $\sim$0.5\,Mpc
-\cite[see e.g.][]{2003ApJ...588L..85C,2004AJ....128.2815P,2005A&A...429..837C}.
-Its present-day iron abundance thought to be intermediate to that of the LMC and SMC
-\citep{1999A&A...352L..40M,2006ApJ...647..970L},
+Here we present KMOS observations of RSGs in the dwarf irregular galaxy NGC\,6822,
+at a distance of $\sim$0.5\,Mpc
+\cite[see e.g.][]{2003ApJ...588L..85C,2004AJ....128.2815P,2005A&A...429..837C,2012MNRAS.421.2998F}.
+Its present-day iron abundance is thought to be intermediate to that of the LMC and SMC
+\citep{2013ApJ...779..102K},
+% 1999A&A...352L..40M,2006ApJ...647..970L},
 but we lack firmer constraints on both its metallicity and its recent chemical evolution.
 Observations of two A-type supergiants by
-\cite{2001ApJ...547..765V} provided a first (and only) quantitative estimate of stellar abundances
-(log(O/H)\,$+$\,12\,$=$\,8.36\,$\pm$\,0.19),
-while results for H\2 regions from
-\cite{2006ApJ...647..970L} found a slightly lower result
-(log(O/H)\,$+$\,12\,$=$\,8.11\,$\pm$\,0.1) and a tentative abundance gradient
-(the first suggested in a dwarf irregular).
+\cite{2001ApJ...547..765V} provided a first estimate of stellar abundances
+log (Fe/H) $+12=7.01\pm0.22$
+log(O/H)   $+12=8.36\pm0.19$, based on LTE line formation calculations for these elements.
+A detailed NLTE study
+\citep{Przybilla} for one of these objects confirmed these results with
+$6.96\pm 0.09$ for iron and $8.30\pm0.02$ for oxygen.
+Compared to the solar abundances of 7.50 and 8.69 of these elements
+\citep{2009ARA&A..47..481A} this indicates about 0.5dex lower in NGC\,6822.
+A study of oxygen abundances in HII-regions by 
+\citep{2006ApJ...642..813L} finds a value of $8.11\pm0.1$ confirming the low metallicity.
+
 
 NGC\, 6822 is a relatively isolated Local Group galaxy, which does not seem to be associated with either M31 or the Milky Way.
-However, it appears to have a relatively large extended stellar halo~\citep{2002AJ....123..832L,2014ApJ...783...49H}.
-There is evidence for a relatively constant star-formation history within the central 5\,kpc
-where multiple stellar populations are present~\citep{2006A&A...451...99B,2012A&A...540A.135S}.
-There is also evidence for recent star formation in the form of a known population of massive stars as well as a number of H\2 regions~\citep{2001ApJ...547..765V,2009A&A...505.1027H,Levesque12}.
+It appears to have a relatively large extended stellar halo
+\citep{2002AJ....123..832L,2014ApJ...783...49H} 
+as well as an extended H\1 disk containing tidal arms and a possible H\1 companion
+\citep{2000ApJ...537L..95D}.
+The H\1 disk is orientated perpendicular to the distribution of old halo stars and has an associated population of blue stars 
+\citep{2003MNRAS.341L..39D,2003ApJ...590L..17K}.
+This led \cite{2006ApJ...636L..85D} to label the system as a
+~\textquoteleft
+polar ring galaxy\textquoteright.
+A population of remote star clusters aligned with the elongated old stellar halo have been recently discovered
+\citep{2011ApJ...738...58H,2013MNRAS.429.1039H}.
+The extended structures of NGC\,6822 suggest some form of recent interaction.
 
-% with some authors describing this galaxy as a polar ring galaxy~\citep[e.g.][]{2006A&A...451...99B}.
-% NGC\, 6822 is known to contain multiple stellar populations as well as an extended halo of extended star clusters.
-% NGC\, 6822 containts an extended stellar population out to around 30\, arcminutes~\citep{2012A&A...540A.135S}.
+In addition, there is evidence for a relatively constant star-formation history within the central 5\,kpc
+\citep{2014ApJ...789..147W}
+with multiple stellar populations
+\citep{2006A&A...451...99B,2012A&A...540A.135S}.
+This includes evidence for recent star formation in the form of a known population of massive stars as well as a number of H\2 regions
+\citep{2001ApJ...547..765V,2006AJ....131..343D,2009A&A...505.1027H,Levesque12}.
 
 In this paper we present near-IR spectroscopy of RSGs in NGC\,6822 from KMOS.
 In Section~\ref{sec:observations} we describe the observations.
-Section~\ref{sec:data_reduction_and_analysis} describes the data reduction and tests performed for these observations,
-Section~\ref{sec:results} details the stellar parameters and metallicities which have been derived and quantifies the (lack of) abundance gradient in NGC\,6822, in Section~\ref{sec:discussion} we discuss our results and in
+Section~\ref{sec:data_reduction_and_analysis} describes the data reduction and tests performed for these observations, 
+radial velocities are computed in Section~\ref{sec:membership},
+Section~\ref{sec:results} details the derived stellar parameters and quantifies the abundance gradient in NGC\,6822, in Section~\ref{sec:discussion} we discuss our results and in
 Section~\ref{sec:conclusions} we conclude the paper.
 
 % section introduction (end)
@@ -268,54 +261,35 @@ Section~\ref{sec:conclusions} we conclude the paper.
 
 Our targets were selected from optical photometry
 \citep{Massey07}, combined with near-IR ($JHK{_s}$) photometry
-\cite[for details see][]{2012A&A...540A.135S}. from the Wide-Field Camera (WFCAM) on the United Kingdom Infra-Red Telescope (UKIRT).
+\cite[for details see][]{2012A&A...540A.135S} from the Wide-Field Camera (WFCAM) on the United Kingdom Infra-Red Telescope (UKIRT).
 The two catalogues were cross-matched and only sources classified as stellar in the photometric catalogues for all filters were considered.
 
 Our spectroscopic targets were selected principally based on their optical colours, as defined by
 \cite{Massey98} and
 \cite{Levesque12}.
-Figure~\ref{fig:BVR} shows a subset of the population, with the dividing line at $(B - V) = 1.25 \times (V - R)+0.45$.
+Figure~\ref{fig:BVR} shows cross-matched stars, with the dividing line at $(B - V) = 1.25 \times (V - R)+0.45$.
 All stars redder than this line, with $V - R > 0.6$, are potential RSGs.
-% Using this selection criteria LM12 quote a contamination of foreground giants, in the direction of NGC\,6822, as 1\%, although, their sample is also statistically cleaned.
 
-% \footnotetext{This is where an appropriate stellar density map is applied and a population of stars is removed from the sample.}
-
-To increase confidence in our targets we also use an additional criterion based on near-IR photometry, using the known location of RSGs in the color-magnitude diagram
+To increase confidence in our targets the targets selected via their optical colours are also required to meet an additional criteria based on near-IR photometry, using the known location of RSGs in the $J-K$ colour-magnitude diagram
 \citep{Nikolaev00}, as shown in Figure~\ref{fig:JK}.
-% To increase confidence in our targets we
-% also used an additional selection criterion based on a near-IR colour-magnitude diagram ($J$-$K$ versus $K$, see Figure
-% \ref{fig:JK}) where RSGs are known to reside
-% \cite{Nikolaev00}.
+
 The combined selection methods yielded 58 targets, from which 19 stars were selected to observe with KMOS, as shown in Figure
 \ref{fig:N6822}.
-Of the 19 candidates, eight have been previously spectroscopically-confirmed as RSGs by
+The selection of the final targets was defined by the KMOS arm allocation software {\sc KARMA} with a prior for the brightest targets.
+Of the 19 candidates, eight were previously spectroscopically confirmed as RSGs by
 \cite{Levesque12}.
-
-% To minimize contamination by foreground dwarfs, we employed an additional selection criteria based on the near-IR colour-magnitude diagram ($J$-$K$ versus $K$, see Figure~\ref{fig:JK}).
-% Using a secondary colour-magnitude cut in the near-IR, where RSGs are brightest, probes a different spectral region and has the effect of removing any contaminant sources within the optical colour-colour selection method without the need for any statistical removal of stars. \textbf{(is this true? why would it remove stars with similar spectral types?)}
-% Using a strict colour-magnitude cut in the near-IR, where RSGs are brightest, has the effect of removing any contaminant of the optical colour-colour selection method without the need for any statistical removal of stars.
-
-
-% From this sample, 100\% of the stars selected for observation have been shown to be bonefied RSG. (Is this true?)
-
-% Targets were selected using a colour-magnitude and colour-colour selection criteria.
-% Initially the candidate RSGs are selected based on the J$-$K, K colour magnitude-diagram, see Figure~\ref{CMD}.
-% In addition to this colour-magnitude selection method we also implemented an optical colour-colour selection method based on the B$-$V, V$-$R colours of the sources~\citep{Massey98}.
-% Using two photometric selection methods is preferable as neither selection method is explored fully and biases with respect to near-IR observations are unknown.
-% Therefore the additional security of using multiple selection methods is preferred.
-% Do I potentially introduce a bias by using both of these selection methods? Is that important for this work?
-
-% Could cite the AF2 target selection paper if I get enough done for it!
 
 
 \begin{figure}
  \includegraphics[width=9.0cm]{figures/n6822_bvr_paper}
  \caption{
           Two-colour diagram for stars with good detections in optical and near-IR bands in NGC\,6822.
-          The black line marks the selection criteria using optical colours, as defined by~\protect\cite{Levesque12}.
+          The black dashed line marks the selection criteria using optical colours, as defined by~\protect\cite{Levesque12}.
           Red circles mark all stars which satisfy the selection criteria.
            % and our $J$-$K$, $K$ cut.
           Large blue stars denote targets observed with KMOS.
+          Solid black line marks the reddening vector
+          \protect\citep{1998ApJ...500..525S}.
          }
  \label{fig:BVR}
 \end{figure}
@@ -323,10 +297,10 @@ Of the 19 candidates, eight have been previously spectroscopically-confirmed as 
 \begin{figure}
  \includegraphics[width=9.0cm]{figures/n6822_jk_paper}
  \caption{
-          Near-IR colour-magnitude diagram (CMD) for stars classified as stellar sources in both catalogues.
-          Plotted using the same symbols as Figure~\ref{fig:BVR}.
+          Near-IR colour-magnitude diagram (CMD) for stars classified as stellar sources in both catalogues, plotted using the same symbols as Figure~\ref{fig:BVR}.
           This CMD is used to aid the optical selection criterion.
-          % It should be noted at the optical selection criteria are the primary selection criteria.
+          Solid black line marks the reddening vector
+          \protect\citep{1998ApJ...500..525S}.
          }
  \label{fig:JK}
 \end{figure}
@@ -361,7 +335,7 @@ Offset sky frames
 O,\,S,\,O,\,O.
 The observations were performed with the $YJ$ grating
 (giving coverage from 1.0 to 1.359$\mu$m);
-estimates of the delivered resolving power for each spectrograph (obtained from the KMOS/esorex pipeline for two arc lines) are listed in Table~\ref{tab:fwhm}.
+estimates of the delivered resolving power for each spectrograph (obtained from the KMOS/esorex pipeline for two arc lines) are listed in Table~\ref{tb:res}.
 
 In addition to the science observations a standard set of KMOS calibration frames were obtained consisting of dark, flat and arc-lamp calibrations (with flats and arcs taken at six different rotator angles).
 A telluric standard star was observed with the arms configured in the science positions, i.e. using the {\em KMOS\_spec\_cal\_stdstarscipatt} template in which the standard star is observed sequentially through all the IFUs.
@@ -373,60 +347,76 @@ The observed standard was HIP97618, with a spectral type of B6\,III
 The {\sc karma} configuration software
 \citep{2008SPIE.7019E..27W} was used to allocate the KMOS arms to 19 RSG science targets.
 A summary of the observed targets is given in
-Table~\ref{tab:observed_parameters}.
+Table~\ref{tb:obs-params}.
 
 To perform the analysis to a satisfactory standard,
 the ideal S/N per resolution element for any given spectra must be $\gtrsim$ 100
 \citep{2014ApJ...788...58G}.
-We estimate the observed S/N and find that we achieve the expected S/N for all targets.
+We estimated the observed S/N and find that we achieve the required S/N for (nearly) all targets.
 
 
 % \footnotetext{http://www.usm.uni-muenchen.de/people/wegner/kmos/en/karma.php}
 
-% \clearpage
-\begin{deluxetable}{crcccc}
-\tabletypesize{\scriptsize}
-% \rotate
-\tablecaption{Full-width half-maximum (FWHM) velocity resolution and equivalent
-resolving power ($R$) determined by the KMOS pipeline for two diagnostic arc-lines for the $YJ$
-grating, for each of the three detectors.\label{tbl-1}}
-\tablewidth{0pt}
-\tablehead{
-\colhead{Det.} & \colhead{IFUs} &
-\multicolumn{2}{c}{Ar\,\lam1.12430\,$\mu$m} & \multicolumn{2}{c}{Ne\,\lam1.17700\,$\mu$m} \\
-& & \colhead{FWHM [\kms]} & \colhead{$R$} & \colhead{FWHM [\kms]} & \colhead{$R$}
-}
-\startdata
+\begin{table*}
+\caption{Measured velocity resolution and resolving power across each detector.\label{tb:res}}
+\scriptsize
+\begin{center}
+\begin{tabular}{crcccc}
+\hline
+\hline
+Det. & IFUs & \multicolumn{2}{c}{Ar\,\lam1.12430\,$\mu$m}
+            & \multicolumn{2}{c}{Ne\,\lam1.17700\,$\mu$m} \\
+ & & FWHM [\kms] & $R$ & FWHM [\kms] & $R$ \\
+  \hline
 1 & 1-8 & \o85.45\,$\pm$\,2.67 & 3\,511$\pm$\,110 &
           \a88.04\,$\pm$\,2.67 & 3\,408$\pm$\,103 \\
 2 & 9-16 & \o80.30\,$\pm$\,3.05 & 3\,736$\pm$\,142 &
           \a82.83\,$\pm$\,2.48 & 3\,622$\pm$\,108 \\
 3 & 17-24 & 101.25\,$\pm$\,2.99 & 2\,963$\pm$\,87\a &
             103.23\,$\pm$\,2.73 & 2\,906$\pm$\,77\a \\
-\enddata
-\end{deluxetable}
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
 
 
-\clearpage
-\begin{deluxetable}{llrccccccccl}
-\tabletypesize{\scriptsize}
-\rotate
-\tablecaption{Summary of VLT-KMOS targets in NGC\,6822. Optical data from
-\protect\cite{Massey07}, near-IR data from the UKIRT survey
-\protect\cite[see][for details]{2012A&A...540A.135S}.
-Radial-velocity estimates are described in
-Section~\ref{sub:membership}.
-Targets with the comment \textquoteleft
-LM12\textquoteright~are those observed by
-\protect\cite{Levesque12}.
-Targets with the comment \textquoteleft Sample\textquoteright
-~are those used for analysis in this paper.\label{tbl-1}}
-\tablewidth{0pt}
-\tablehead{
-\colhead{Name} & \colhead{Alt. name} & \colhead{S/N} & \colhead{$\alpha$ (J2000)} & \colhead{$\delta$ (J2000)} &
-\colhead{$B$} & \colhead{$V$} & \colhead{$R$} & \colhead{$J$} & \colhead{$H$} & \colhead{$K$} & \colhead{Notes}
-}
-\startdata
+
+% % \clearpage
+% \begin{deluxetable}{crcccc}
+% \tabletypesize{\scriptsize}
+% % \rotate
+% \tablecaption{Full-width half-maximum (FWHM) velocity resolution and equivalent
+% resolving power ($R$) determined by the KMOS pipeline for two diagnostic arc-lines for the $YJ$
+% grating, for each of the three detectors.\label{tb:res}}
+% \tablewidth{0pt}
+% \tablehead{
+% \colhead{Det.} & \colhead{IFUs} &
+% \multicolumn{2}{c}{Ar\,\lam1.12430\,$\mu$m} & \multicolumn{2}{c}{Ne\,\lam1.17700\,$\mu$m} \\
+% & & \colhead{FWHM [\kms]} & \colhead{$R$} & \colhead{FWHM [\kms]} & \colhead{$R$}
+% }
+% \startdata
+% 1 & 1-8 & \o85.45\,$\pm$\,2.67 & 3\,511$\pm$\,110 &
+%           \a88.04\,$\pm$\,2.67 & 3\,408$\pm$\,103 \\
+% 2 & 9-16 & \o80.30\,$\pm$\,3.05 & 3\,736$\pm$\,142 &
+%           \a82.83\,$\pm$\,2.48 & 3\,622$\pm$\,108 \\
+% 3 & 17-24 & 101.25\,$\pm$\,2.99 & 2\,963$\pm$\,87\a &
+%             103.23\,$\pm$\,2.73 & 2\,906$\pm$\,77\a \\
+% \enddata
+% \end{deluxetable}
+
+
+
+\begin{table*}
+\caption{
+        Summary of VLT-KMOS targets in NGC\,6822.\label{tb:obs-params}
+        }
+\scriptsize
+\begin{center}
+\begin{tabular}{llrccccccccl}
+ \hline
+ \hline
+Name & Alt. name & S/N & $\alpha$ (J2000) & $\delta$ (J2000) & $B$ & $V$ & $R$ & $J$ & $H$ & $K_{\rm s}$ & Notes \\
+ \hline
 J194443.81$-$144610.7  &  RSG5   & 222.8 &   19:44:43.81  &  $-$14:46:10.7  &  20.83  &  18.59  &  17.23  &  14.16  &  13.37  &  13.09 & Sample\\
 J194445.98$-$145102.4  &  RSG8   & 119.6 &   19:44:45.98  &  $-$14:51:02.4  &  20.91  &  18.96  &  17.89  &  15.53  &  14.72  &  14.52 & Sample\\
 J194447.13$-$144627.1  &  RSG9   &  94.2 &   19:44:47.13  &  $-$14:46:27.1  &  21.30  &  19.41  &  18.41  &  16.13  &  15.35  &  15.12 \\
@@ -445,135 +435,67 @@ J194459.14$-$144723.9  &  RSG45  & 123.6 &   19:44:59.14  &  $-$14:47:23.9  &  2
 J194500.24$-$144758.9  &  RSG47  & 109.6 &   19:45:00.24  &  $-$14:47:58.9  &  21.27  &  19.20  &  18.10  &  15.60  &  14.80  &  14.57 \\
 J194500.53$-$144826.5  &  RSG49  & 167.4 &   19:45:00.53  &  $-$14:48:26.5  &  20.84  &  18.75  &  17.51  &  14.70  &  13.86  &  13.61 & Sample\\
 J194506.98$-$145031.1  &  RSG55  & 104.0 &   19:45:06.98  &  $-$14:50:31.1  &  21.06  &  19.12  &  18.06  &  15.74  &  14.94  &  14.78 & Sample\\
-\enddata
-\end{deluxetable}
+
+\hline
+\end{tabular}
+\end{center}
+\tablecomments{Optical data from
+\protect\cite{Massey07}, near-IR data from the UKIRT survey
+\protect\cite[see][for details]{2012A&A...540A.135S}.
+Radial-velocity estimates are described in
+Section~\ref{sec:membership}.
+Targets with the comment \textquoteleft
+LM12\textquoteright~are those observed by
+\protect\cite{Levesque12}.
+Targets with the comment \textquoteleft Sample\textquoteright
+~are those used for analysis in this paper.}
+\end{table*}
+
+
+% \clearpage
+% \begin{deluxetable}{llrccccccccl}
+% \tabletypesize{\scriptsize}
+% % \rotate
+% \tablecaption{Summary of VLT-KMOS targets in NGC\,6822. Optical data from
+% \protect\cite{Massey07}, near-IR data from the UKIRT survey
+% \protect\cite[see][for details]{2012A&A...540A.135S}.
+% Radial-velocity estimates are described in
+% Section~\ref{sec:membership}.
+% Targets with the comment \textquoteleft
+% LM12\textquoteright~are those observed by
+% \protect\cite{Levesque12}.
+% Targets with the comment \textquoteleft Sample\textquoteright
+% ~are those used for analysis in this paper.\label{tb:obs-params}}
+% \tablewidth{0pt}
+% \tablehead{
+% \colhead{Name} & \colhead{Alt. name} & \colhead{S/N} & \colhead{$\alpha$ (J2000)} & \colhead{$\delta$ (J2000)} &
+% \colhead{$B$} & \colhead{$V$} & \colhead{$R$} & \colhead{$J$} & \colhead{$H$} & \colhead{$K$} & \colhead{Notes}
+% }
+% \startdata
+% J194443.81$-$144610.7  &  RSG5   & 222.8 &   19:44:43.81  &  $-$14:46:10.7  &  20.83  &  18.59  &  17.23  &  14.16  &  13.37  &  13.09 & Sample\\
+% J194445.98$-$145102.4  &  RSG8   & 119.6 &   19:44:45.98  &  $-$14:51:02.4  &  20.91  &  18.96  &  17.89  &  15.53  &  14.72  &  14.52 & Sample\\
+% J194447.13$-$144627.1  &  RSG9   &  94.2 &   19:44:47.13  &  $-$14:46:27.1  &  21.30  &  19.41  &  18.41  &  16.13  &  15.35  &  15.12 \\
+% J194447.81$-$145052.5  &  RSG12  & 211.4 &   19:44:47.81  &  $-$14:50:52.5  &  20.74  &  18.51  &  17.22  &  14.37  &  13.58  &  13.30 & LM12, Sample \\
+% J194450.54$-$144801.6  &  RSG16  & 104.2 &   19:44:50.54  &  $-$14:48:01.6  &  20.83  &  18.95  &  17.97  &  15.75  &  14.98  &  14.79 \\
+% J194451.64$-$144858.0  &  RSG21  & 105.4 &   19:44:51.64  &  $-$14:48:58.0  &  21.33  &  19.45  &  18.32  &  15.81  &  14.95  &  14.72 \\
+% J194453.46$-$144552.6  &  RSG24  & 144.6 &   19:44:53.46  &  $-$14:45:52.6  &  20.36  &  18.43  &  17.38  &  15.06  &  14.30  &  14.08 & LM12, Sample \\
+% J194453.46$-$144540.1  &  RSG25  & 103.3 &   19:44:53.46  &  $-$14:45:40.1  &  20.88  &  19.14  &  18.17  &  15.95  &  15.16  &  14.98 & LM12, Sample \\
+% J194454.46$-$144806.2  &  RSG29  & 201.0 &   19:44:54.46  &  $-$14:48:06.2  &  20.56  &  18.56  &  17.35  &  14.43  &  13.67  &  13.34 & LM12, Sample\\
+% J194454.54$-$145127.1  &  RSG30  & 301.5 &   19:44:54.54  &  $-$14:51:27.1  &  19.29  &  17.05  &  15.86  &  13.43  &  12.66  &  12.42 & LM12, Sample \\
+% J194455.70$-$145155.4  &  RSG34  & 326.7 &   19:44:55.70  &  $-$14:51:55.4  &  19.11  &  16.91  &  15.74  &  13.43  &  12.70  &  12.43 & LM12, Sample \\
+% J194455.93$-$144719.6  &  RSG36  &  99.6 &   19:44:55.93  &  $-$14:47:19.6  &  21.43  &  19.56  &  18.52  &  16.14  &  15.33  &  15.14 & LM12 \\
+% J194456.86$-$144858.5  &  RSG39  & 106.1 &   19:44:56.86  &  $-$14:48:58.5  &  21.05  &  19.06  &  18.04  &  15.81  &  15.05  &  14.85 \\
+% J194457.31$-$144920.2  &  RSG40  & 283.5 &   19:44:57.31  &  $-$14:49:20.2  &  19.69  &  17.41  &  16.20  &  13.52  &  12.76  &  12.52 & LM12, Sample \\
+% J194459.14$-$144723.9  &  RSG45  & 123.6 &   19:44:59.14  &  $-$14:47:23.9  &  21.30  &  19.17  &  18.05  &  15.58  &  14.74  &  14.50 \\
+% J194500.24$-$144758.9  &  RSG47  & 109.6 &   19:45:00.24  &  $-$14:47:58.9  &  21.27  &  19.20  &  18.10  &  15.60  &  14.80  &  14.57 \\
+% J194500.53$-$144826.5  &  RSG49  & 167.4 &   19:45:00.53  &  $-$14:48:26.5  &  20.84  &  18.75  &  17.51  &  14.70  &  13.86  &  13.61 & Sample\\
+% J194506.98$-$145031.1  &  RSG55  & 104.0 &   19:45:06.98  &  $-$14:50:31.1  &  21.06  &  19.12  &  18.06  &  15.74  &  14.94  &  14.78 & Sample\\
+% \enddata
+% \end{deluxetable}
 
 
 
 % subsection KMOS observations (end)
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Section not required:
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Signal-to-noise Ratio} % (fold)
-% \label{sub:signal_to_noise_ratio}
-
-% To perform the analysis to a satisfactory standard, the ideal S/N per resolution element for any given spectra must be $\gtrsim$ 100
-% \citep{2014ApJ...788...58G}.
-
-% To crudely approximate the S/N for the spectra we assume Poission noise from the source signal (i.e. $S/N = S_{obj} / \sqrt S_{obj}$ where $S_{obj}$ is the signal from the object).
-% This neglects the noise contribution from both the sky and the detector and provides an upper limit on the S/N.
-% % If I don't keep the figure:
-% % Using this crude S/N estimate, we find that all targets meet their required S/N.
-
-% % If the figure stays:
-% Figure
-% \ref{fig:S/N} shows the calculated S/N for each target against their respective J-band magnitudes.
-%  % as well as the expected calculated S/N from the KMOS exposure time calculator\footnotemark.
-% % Our expected S/N for all targets is from the KMOS exposure time calculator is $\ge 100$.
-% % The parameters used in for the exposure time calculations are chosen to best represent the observed data.
-% From this figure we can expect that all targets have met the required S/N limit for our analysis.
-% % We also note that the S/N from the exposure time accurately represents the delivered S/N.
-
-% % \begin{figure}
-% %  \includegraphics[width=9.0cm]{figures/N6822_SNRvsJ}
-% %  \caption{
-% %           Observed signal-to-noise ratio (S/N) against J-band magnitude for all observed sources.
-% %           Dashed green line represents the best fit to the data.
-% %           Total exposure time for each target is 2400\,s.
-% %           \textbf{Marked for deletion?}
-% %          }
-% %  \label{fig:S/N}
-% % \end{figure}
-
-
-% \begin{figure*}
-%  \includegraphics[width=18.0cm]{figures/N6822_SNRvsJ_ETC}
-%  % \includegraphics[width=9.0cm]{figures/N6822_SNRvsJ}
-%  \caption{
-%           Left: Observed signal-to-noise ratio (S/N) against J-band magnitude for all observed sources.
-%           Dashed green line represents the best fit to the data.
-%           Total exposure time for each target is 2400\,s.
-%           Right panel: Observed S/N against expected S/N obtained from the KMOS exposure time calculator.
-%           Observed S/N calculated assuming Poisson noise only.
-%           These figures imply that we are not achieving the S/N which we expect at higher S/N although we have not taken into account the contribution from the sky.
-%           \textbf{Marked for deletion?}
-%          }
-%  \label{fig:S/N}
-% \end{figure*}
-
-
-% \begin{figure}
-%  \includegraphics[width=9.0cm]{figures/N6822_SNRvsETC}
-%  \caption{
-%           Signal-to-noise ratio (S/N) against KMOS exposure time calculator estimates for all observed sources.
-%           S/N calculated using equation~\ref{eq:S/N}.
-%          }
-%  \label{fig:S/NvsETC}
-% \end{figure}
-
-
-% subsection signal_to_noise_ratio (end)
-
-\subsection{NGC\,6822 Membership} % (fold)
-\label{sub:membership}
-Candidates were selected using their optical and near-IR colours,
-however, these criteria alone are not enough to conclusively determine whether these stars are genuine NGC\,6822 members.
-% genuinely RSGs.
-Foreground galactic stars with similar spectral types (i.e. M-dwarfs) could potentially contaminate our sample which could influence metallicity measurements and hence, bias our conclusions.
-
-To determine membership of NGC\,6822 we estimate stellar radial velocities from the KMOS spectra for each target.
-Assigning membership to NGC\,6822 also confirms the luminosity class of our targets as supergiants.
-% The estimated radial velocities are listed in Table
-% \ref{tab:observed_parameters}.
-Relative radial velocities are estimated by cross-correlating the spectra of each source,
-within the 1.15-1.23\,$\mu$m region,
-against a reference spectrum,
-chosen to be the highest S/N spectrum in our sample, RSG34.
-% Using this method we can derive a relative radial velocity.
-Figure
-\ref{fig:Vrad} shows the relative radial velocity for each target with respect to the reference target.
-From the figure we can see that the majority of the targets lie within the one-sigma error bars
-(shown as green solid lines).
-RSG5 has a velocity which is just below three-sigma from the mean
-and as such may not be associated with the same kinematic body as the other objects.
-Therefore RSG5 may be a potential galactic foreground object.
-% Ben mentioned/suggested that the pipeline performs a Barycentric correction ... Where is this mentioned in the headers?
-
-% Radial velocities are estimated by measuring the centroid of a set of absorption features in the 1.15-1.23$\mu$m region.
-
-% By measuring the centroids of a set of nine stellar absorption features in the 1.15-1.23\,$\mu$m region one can compare the relative radial velocities with the systematic velocity of NGC\,6822,
-% as measured from the H\1 Parkes All-Sky Survey (HIPHAS) Bright Galaxy Catalog
-% \citep[$-57\pm$ 2\,\kms;][]{2004AJ....128...16K}.
-
-
-% Figures & Tables:
-
-\begin{figure}
- \includegraphics[width=9.0cm]{figures/N6822_RvsVrad}
- \caption{
- Relative radial velocities of KMOS targets as a function of radial distance from the centre of NGC\,6822.
- Radial velocity estimates are performed by cross-correlating each target with a reference spectrum (RSG34).
- Mean of the distribution is marked by the red line.
- One standard deviation is marked by the green lines.
- % The radial velocity of NGC\,6822 as listed in
- % \protect \cite{2004AJ....128...16K}.
- The potential outlier (RSG5) is just below three-sigma from the mean.
- }
- \label{fig:Vrad}
-\end{figure}
-
-% Assigning membership of our target stars to NGC\,6822 conclusively proves that
-% a) the stars we have observed are supergiants and b) their membership to NGC\,6822.
-%  are abundant in the field of NGC\,6822~\citep{2012A&A...540A.135S} [+ others!].
-% To conclusively determine bonefied RSGs, we must assign the candidates to NGC\,6822.
-
-% Deriving radial velocities is an effective way to assign membership to an external galaxy~\citep{Drout12}.
-
-
-% subsection ngc6822_membership (end)
-% section observations (end)
-
 
 \section{Data Reduction and Analysis} % (fold)
 \label{sec:data_reduction_and_analysis}
@@ -585,13 +507,9 @@ The standard KMOS/esorex routines were used to calibrate and reconstruct the sci
 % On-sky flatfield exposures taken on the previous night were used to implement a more precise flatfield correction.
 Sky subtraction was performed using the standard KMOS recipes and telluric correction performed using two different strategies.
 % and an additional second-order sky subtraction technique is implemented~\citep{2007MNRAS.375.1099D}.
-Throughout the analysis presented in this section all the spectra have been extracted from their respective data cubes, using a consistent method.
+Throughout the analysis presented in this section all the spectra have been extracted from their respective data cubes using a consistent method (i.e. the optimal extraction method within the pipeline).
 
 
-% \subsection{Telluric Correction}
-% \label{sub:Telluric Corrections}
-
-% Intro.
 \subsection{Three-arm vs 24-arm Telluric Correction} % (fold)
 \label{sub:three_arm_vs_24_arm_telluric_correction}
 
@@ -610,20 +528,25 @@ and to directly compare the two results.
 
 We compared the telluric spectrum in each IFU with that of the IFU used by the three-arm template in each of the three KMOS spectrographs.
 Figure~\ref{fig:IFU_compare} shows the differences between the telluric spectra across the IFUs,
-in which the differences between the IFUs in the YJ-band are comparable to those in the H-band
+where the differences between the IFUs in the YJ-band are comparable to those in the H-band
 \cite[cf. Fig.7 from][]{2013A&A...558A..56D}.
+The agreement between the IFUs in our region of interest (1.15 $-$ 1.22$\mu$m) is generally very good.
 
 
 \begin{figure*}
+ \begin{center}
  \includegraphics[width=12.0cm]{figures/N6822_t_compare}
  \caption{
     Comparison of J-band spectra of the same standard star in each IFU.
     The ratio of each spectrum compared to that from the IFU used in the three-arm telluric method is shown,
     with their respective mean and standard deviation ($\mu$ and $\sigma$).
-    Red lines indicate $\mu$ = 1.0, $\sigma$ = 0.0 for each ratio.
-    IFUs 13 and 16 are omitted as no data was taken with these IFUs.
+    Red lines indicate $\mu$~=~1.0, $\sigma$~=~0.0 for each ratio.
+    Blue shaded area signifies region where the J-band analysis fitting takes place.
+    Within this region, in general, the discrepancies between the IFUs is small.
+    This is reflected in the standard deviation values when only considering this region.
+    IFUs 13 and 16 are omitted as no data was taken with these IFUs. \label{fig:IFU_compare}
           }
- \label{fig:IFU_compare}
+ \end{center}
 \end{figure*}
 
 To quantify the difference the two telluric methods would make to our analysis,
@@ -639,7 +562,6 @@ The results of this comparison are detailed in Section
 \subsection{Telluric Correction Implementation} % (fold)
 \label{sub:ngc6822_telluric_correction}
 
-% The 24-arm telluric correction was used for the NGC\,6822 data.
 To improve the accuracy of the telluric correction,
 for both methods mentioned above,
 we implemented some additional recipes beyond those of the KMOS/esorex pipeline.
@@ -648,9 +570,6 @@ The first corrects for any potential shift in wavelength between each science sp
 The most effective way to implement this correction is to cross-correlate each pair of science and telluric spectra.
 % Performing a cross-correlation between two spectra with similar spectral features allows one to identify a shift in wavelength space as a maximum in the cross-correlation will be produced when the two spectra are exactly aligned.
 Any shift between the two spectra is then applied to the initial telluric spectrum using a cubic-spline interpolation routine.
-
-% The cross-correlation is performed using a python routine.\footnotemark
-% \footnotetext{Original IDL routine: http://www.astro.washington.edu/docs/idl/cgi-bin/getpro/library43.html?CROSS\_CORRELATE}
 
 The second correction applied is a simple spectral scaling algorithm.
 This routine corrects for differences in line intensity of the most prominent features common to both the telluric and science spectra.
@@ -665,50 +584,66 @@ T_{2} = (T_{1} + c) / (T_{1} - c),
 To determine the required scaling,
 telluric spectra are computed for $-0.5 < c < 0.5$ in increments of 0.02
 (where a perfect value, i.e. no difference in line strength would be $c = 0$).
-The standard deviation is then computed for each telluric-corrected science spectrum, and the minimum value of the standard-deviation matrix defines the optimum scaling.
+The standard deviation is then computed for each rtelluric-corrected science spectrum, and the minimum value of the standard-deviation matrix defines the optimum scaling.
 For this algorithm, only the region of interest for our analysis is considered (i.e. $1.15 - 1.22\mu$m).
-% This method is preferred to one where the entire spectral region is taken into account as the telluric correction routines implemented by the pipeline occasionally has large artificial features which bias this algorithm.
-
-
 
 The final set of telluric spectra,
 generated using the KMOS/esorex routines and modified using the additional routines described above,
 are used to correct their respective science observations for the effects of the Earth's atmosphere.
-% subsection ngc6822_telluric_correction (end)
 
-% subsection standard_star_telluric_correction (end)
+% subsection ngc6822_telluric_correction (end)
 
 
 \begin{figure*}
  %\vspace{302pt}
-\includegraphics[width=16.cm]{figures/N6822_mod_fit.pdf}
-\caption{Spectra of all NGC\,6822 stars along with their associated best-fit model spectra.
-         The Mg\,\1 lines at 1.1xx and 1.2xx have not been used in the fit due to non-LTE effects.
+ \begin{center}
+\includegraphics[width=15.cm]{figures/N6822_mod_fit.pdf}
+\caption{KMOS Spectra of the NGC\,6822 RSGs and their associated best-fit model spectra
+(black and red lines respectively).
+Sine of the main diagnostic lines are marked above.
          }
 \label{fig:model_fits}
+\end{center}
 \end{figure*}
-
-
-
 
 
 % section data_reduction_and_analysis (end)
 
-% \subsection{Sample Selection} % (fold)
-% \label{sub:sample_selection}
-% \textbf{Do I actually need this section or can we get away with a sentence in the results section?}
-% The sample of targets used in the remainder of this paper are visually selected to exclude any target with residual features from the sky subtraction process in their reduced spectrum.
-% These features could potentially bias our results by perturbing the continuum placement within the model fits.
-% Of the 18 targets which were observed, 11/18 have been used to derive stellar parameters.
-% Table~\ref{} contains the derived stellar parameters (see section~\ref{sub:stellar_parameters}) for the 11 sample RSGs.
 
+\section{NGC\,6822 Membership} % (fold)
+\label{sec:membership}
+Candidates were selected using their optical and near-IR colours,
+however, these criteria alone are not enough to conclusively determine whether these stars are genuine NGC\,6822 members.
+Foreground Galactic stars with similar spectral types (i.e. M-dwarfs) could potentially contaminate our sample and bias our conclusions.
+NGC\,6822 is at low galactic latitude (b$\sim -18$) which makes Galactic foreground contamination particularly important.
 
+To determine membership of NGC\,6822 we estimate stellar radial velocities from the KMOS spectra for each target.
+Assigning membership to NGC\,6822 also confirms the luminosity class of our targets as supergiants.
+Relative radial velocities are estimated by cross-correlating the spectrum of each source,
+within the 1.15-1.23\,$\mu$m region,
+against a reference spectrum,
+chosen to be the highest S/N spectrum in our sample, RSG34.
+Figure
+\ref{fig:Vrad} shows the relative radial velocity for each target with respect to the reference target.
+RSG5 has a velocity which is just below three-sigma from the median
+and, as such, may not be associated with the same kinematic body as the other objects.
+Absolute radial velocities are not calculated here as the absolute wavelength calibration of the data is uncertain.
 
-% \begin{itemize}
-%     \item How can I flesh this out?
-%     \item Show spectra of in/out
-% \end{itemize}
-% subsection sample_selection (end)
+% Figures & Tables:
+
+\begin{figure}
+ \includegraphics[width=9.0cm]{figures/N6822_RvsVrad}
+ \caption{
+ Relative radial velocities of KMOS targets as a function of radial distance from the centre of NGC\,6822.
+ Radial velocity estimates are performed by cross-correlating each target with a reference spectrum (RSG34).
+ The median of the distribution is marked by the red line.
+ One median absolute deviation is marked by the green lines.
+ The potential outlier at $\sim-35$kms$^{-1}$(RSG5) is more than three-sigma from the median.
+ }
+ \label{fig:Vrad}
+\end{figure}
+
+% subsection ngc6822_membership (end)
 
 \section{Results} % (fold)
 \label{sec:results}
@@ -717,10 +652,9 @@ Any residual sky subtraction features could potentially influence our results by
 \citep[see][for more discussion]{Davies14,2014ApJ...788...58G}.
 Thus, pending a more rigorous treatment of the data
 (e.g. to take into account the changing spectral resolution across the array),
-we exclude these objects from our analysis.
-% The sample of targets used in the remainder of this paper are visually selected to exclude targets with residual features from the sky subtraction process.
+we exclude objects showing residual sky-subtraction features from our analysis.
 Of the 18 observed targets, 11 were used to derive stellar parameters
-as indicated in Table~\ref{tab:observed_parameters}.
+as indicated in Table~\ref{tb:obs-params}.
 
 Stellar parameters
 (metallicity, effective temperature, surface gravity and microturbulence)
@@ -728,21 +662,25 @@ have been derived using the J-band analysis technique described by
 \cite{Davies10} and demonstrated by
 \cite{Davies14} and
 \cite{2014ApJ...788...58G}.
-To determine fit parameters, this technique uses a grid of model atmospheres to fit the observational data and also includes the spectral resolving power ($R$) as a free parameter fiven its variation with each spectrograph.
+To determine physical parameters, this technique uses a grid of model atmospheres to fit the observational data.
+The resolution of the models is determined by the measured resolution from the KMOS/esorex pipeline (Table~\ref{tb:res}).
 Model atmospheres were generated using the MARCS code
-\citep{Gustafsson08} where the range of parameters is defined in Table
-\ref{tab:model_range}.
-The precision of the models is increased by including departures from local thermodynamic equilibrium (LTE) in some of the strongest lines in the region
+\citep{Gustafsson08} where the range of parameters is defined in
+Table~\ref{tb:mod_range}.
+The precision of the models is increased by including departures from local thermodynamic equilibrium (LTE) in some of the strongest Fe, Ti and Si atomic lines
 \citep{2012ApJ...751..156B,2013ApJ...764..115B}.
+The two strong magnesium lines are excluded from the analysis as these lines are known to be affected strongly by non-LTE effects
+(see Figure~\ref{fig:model_fits} where the two MgI lines are systematically under- and over-estimated respectively).
+The non-LTE line formation of Mg I lines will be explored in an upcoming paper.
 
 \begin{table}
 \caption{
-Model grid used for analysis}
+Model grid ranges used for analysis.\label{tb:mod_range}
          }
 \scriptsize
-\label{tab:model_range}
 \begin{center}
 \begin{tabular}{lccc}
+ \hline
  \hline
   Model Parameter & Min. & Max. & Step size \\
  \hline
@@ -763,12 +701,11 @@ log $g$ (cgs)  & $-$1.0\o & 1.0\o & 0.5\o \\
 \label{sub:telluric_comparison}
 
 We used these SV data to determine which of the two telluric standard star routines is most appropriate for our analysis.
-By means of comparison, we reduced the science data using both telluric correction routines and, using our RSG model grid
-(see Section~\ref{sub:stellar_parameters}), computed stellar parameters.
-Table~\ref{tab:stellar_params} details the stellar parameters derived for each target using both telluric methods, with derived stellar parameters compared in
+By means of comparison, we reduced the science data using both telluric correction routines and, using our RSG model grid, computed stellar parameters.
+Table~\ref{tb:stellar-params} details the stellar parameters derived for each target using both telluric methods, with the derived stellar parameters compared in
 Figure~\ref{fig:3vs24AT}.
 % We compare the stellar parameters derived using the two telluric correction methods in Figure~\ref{fig:3vs24AT}.
-Mean difference between the metallicitiy values for two methods is
+The mean difference between the metallicity values for two methods is
 $\Delta [Z] = 0.01\pm 0.10$.
 Therefore, for our analysis, there is no significant difference between the two telluric methods.
 
@@ -786,15 +723,15 @@ Therefore, for our analysis, there is no significant difference between the two 
  \caption{
             Comparison of the final model parameters using the two different telluric methods.
             Top left: metallicity ([Z]), mean difference
-            $<\Delta[Z]> ~= 0.04 \pm 0.07$.
+            $<\Delta[Z]>~= 0.04 \pm 0.07$.
             Top right: effective temperature (T$_{eff}$), mean difference
-            $<\Delta T_{eff}> ~= -14 \pm 42$.
+            $<\Delta T_{eff}>~= -14 \pm 42$.
             Bottom left: surface gravity (log $g$), mean difference
-            $<\Delta$ log\,$g> ~= -0.06 \pm 0.12$.
+            $<\Delta$ log\,$g>~= -0.06 \pm 0.12$.
             Bottom right: Microturbulence ($\xi$), mean difference
-            $<\Delta \xi> ~= -0.1 \pm 0.1$.
+            $<\Delta \xi>~= -0.1 \pm 0.1$.
             Black solid lines indicates direct correlation between the two methods.
-            Green dashed lines indicates linear best fit to data.
+            Green dashed lines indicates linear best fit to the data.
             In all cases, the distributions are statistically consistent with a one-to-one ratio (black lines).
           }
  \label{fig:3vs24AT}
@@ -805,121 +742,125 @@ Therefore, for our analysis, there is no significant difference between the two 
 \begin{center}
   % \centering
 \caption{
-Fit parameters for reduction using two different telluric methods.
+Fit parameters for reductions using two different telluric methods.
+\label{tb:stellar-params}
          }
 \scriptsize
-\label{tab:stellar_params}
-\begin{tabular}{lcccccc c cccccc}
+\begin{tabular}{lc cccc c cccc}
  \hline
-  Target  & IFU &  \multicolumn{5}{c}{24 Arm Telluric} & \multicolumn{5}{c}{3 Arm Telluric}\\
-  \cline{3-7} \cline{9-13}
- &  & T$_{fit}$ (K) & log g & $\xi$ (\kms) & [Z] &$R$ & & $T_{fit}$ (K) & log g & $\xi$ (\kms) & [Z] & $R$\\
+ \hline
+  Target  & IFU &  \multicolumn{4}{c}{24 Arm Telluric} & \multicolumn{4}{c}{3 Arm Telluric}\\
+  \cline{3-6}  \cline{8-11}
+ &  & T$_{fit}$ (K) & log g & $\xi$ (\kms) & [Z] & & $T_{fit}$ (K) & log g & $\xi$ (\kms) & [Z]\\
   \hline
-RSG5  & 6 & 3790 $\pm$ 80\o & $-$0.0 $\pm$ 0.3 & 3.5 $\pm$ 0.4 & $-$0.55 $\pm$ 0.18 & 3400 & & 3860 $\pm$ 90\o & $-$0.1 $\pm$ 0.5 &  3.5 $\pm$ 0.4 & $-$0.61 $\pm$ 0.21 & 3400 \\
-RSG8  & 11& 3850 $\pm$ 100  & \pp0.4 $\pm$ 0.5 & 3.5 $\pm$ 0.4 & $-$0.78 $\pm$ 0.22 & 3600 & & 3810 $\pm$ 110  & \pp0.4 $\pm$ 0.5 &  3.3 $\pm$ 0.5 & $-$0.65 $\pm$ 0.24 & 3600 \\
+RSG5  & 6 & 3790 $\pm$ 80\o & $-$0.0 $\pm$ 0.3 & 3.5 $\pm$ 0.4 & $-$0.55 $\pm$ 0.18 & & 3860 $\pm$ 90\o & $-$0.1 $\pm$ 0.5 &  3.5 $\pm$ 0.4 & $-$0.61 $\pm$ 0.21 \\
+RSG8  & 11& 3850 $\pm$ 100  & \pp0.4 $\pm$ 0.5 & 3.5 $\pm$ 0.4 & $-$0.78 $\pm$ 0.22 & & 3810 $\pm$ 110  & \pp0.4 $\pm$ 0.5 &  3.3 $\pm$ 0.5 & $-$0.65 $\pm$ 0.24 \\
+RSG12 & 12& 3880 $\pm$ 70\o & \pp0.0 $\pm$ 0.3 & 4.0 $\pm$ 0.4 & $-$0.32 $\pm$ 0.16 & & 3880 $\pm$ 70\o & \pp0.0 $\pm$ 0.3 &  4.0 $\pm$ 0.4 & $-$0.32 $\pm$ 0.16 \\
+RSG24 & 2 & 3970 $\pm$ 60\o & \pp0.4 $\pm$ 0.5 & 3.9 $\pm$ 0.4 & $-$0.58 $\pm$ 0.19 & & 3990 $\pm$ 80\o & \pp0.1 $\pm$ 0.5 &  3.8 $\pm$ 0.5 & $-$0.56 $\pm$ 0.14 \\
+RSG25 & 3 & 3910 $\pm$ 100  & \pp0.6 $\pm$ 0.5 & 3.0 $\pm$ 0.4 & $-$0.58 $\pm$ 0.24 & & 3910 $\pm$ 100  & \pp0.6 $\pm$ 0.5 &  3.0 $\pm$ 0.4 & $-$0.58 $\pm$ 0.24 \\
+RSG29 & 4 & 3980 $\pm$ 60\o & \pp0.1 $\pm$ 0.4 & 3.7 $\pm$ 0.4 & $-$0.38 $\pm$ 0.16 & & 3990 $\pm$ 80\o & $-$0.1 $\pm$ 0.5 &  3.6 $\pm$ 0.4 & $-$0.44 $\pm$ 0.17 \\
+RSG30 & 14& 3900 $\pm$ 80\o & $-$0.3 $\pm$ 0.5 & 3.7 $\pm$ 0.4 & $-$0.67 $\pm$ 0.16 & & 3850 $\pm$ 80\o & $-$0.3 $\pm$ 0.5 &  3.5 $\pm$ 0.4 & $-$0.59 $\pm$ 0.19 \\
+RSG34 & 15& 3870 $\pm$ 80\o & $-$0.4 $\pm$ 0.5 & 4.2 $\pm$ 0.5 & $-$0.53 $\pm$ 0.19 & & 3850 $\pm$ 60\o & $-$0.3 $\pm$ 0.4 &  4.3 $\pm$ 0.5 & $-$0.49 $\pm$ 0.17 \\
+RSG40 & 17& 3910 $\pm$ 110  & $-$0.5 $\pm$ 0.5 & 3.6 $\pm$ 0.5 & $-$0.20 $\pm$ 0.21 & & 3880 $\pm$ 110  & $-$0.5 $\pm$ 0.5 &  3.6 $\pm$ 0.5 & $-$0.15 $\pm$ 0.24 \\
+RSG49 & 21& 3890 $\pm$ 120  & \pp0.1 $\pm$ 0.5 & 3.0 $\pm$ 0.4 & $-$0.43 $\pm$ 0.28 & & 3890 $\pm$ 120  & \pp0.1 $\pm$ 0.5 &  3.0 $\pm$ 0.4 & $-$0.43 $\pm$ 0.28 \\
+RSG55 & 18& 3810 $\pm$ 130  & \pp0.4 $\pm$ 0.5 & 2.2 $\pm$ 0.4 & $-$0.68 $\pm$ 0.31 & & 3740 $\pm$ 130  & \pp0.4 $\pm$ 0.5 &  2.1 $\pm$ 0.5 & $-$0.54 $\pm$ 0.41 \\
 % RSG9  & 5 & 4040 $\pm$ 130  & \pp0.8 $\pm$ 0.3 & 3.8 $\pm$ 0.6 & \pp0.14 $\pm$ 0.24 & 2500 & & 3990 $\pm$ 130  & \pp0.8 $\pm$ 0.3 &  3.8 $\pm$ 0.6 & \pp0.09 $\pm$ 0.24 & 2500 \\
-RSG12 & 12& 3880 $\pm$ 70\o & \pp0.0 $\pm$ 0.3 & 4.0 $\pm$ 0.4 & $-$0.32 $\pm$ 0.16 & 3600 & & 3880 $\pm$ 70\o & \pp0.0 $\pm$ 0.3 &  4.0 $\pm$ 0.4 & $-$0.32 $\pm$ 0.16 & 3600 \\
 % RSG16 & 7 & 4200 $\pm$ 50\o & \pp0.5 $\pm$ 0.4 & 2.3 $\pm$ 0.3 & $-$0.51 $\pm$ 0.16 & 4400 & & 4230 $\pm$ 100  & \pp0.5 $\pm$ 0.2 &  2.4 $\pm$ 0.3 & $-$0.54 $\pm$ 0.15 & 4400 \\
 % RSG21 & 10& 3780 $\pm$ 110  & \pp0.4 $\pm$ 0.5 & 2.3 $\pm$ 0.4 & $-$0.55 $\pm$ 0.32 & 3800 & & 3790 $\pm$ 90\o & \pp0.5 $\pm$ 0.5 &  2.2 $\pm$ 0.4 & $-$0.46 $\pm$ 0.33 & 3800 \\
-RSG24 & 2 & 3970 $\pm$ 60\o & \pp0.4 $\pm$ 0.5 & 3.9 $\pm$ 0.4 & $-$0.58 $\pm$ 0.19 & 3400 & & 3990 $\pm$ 80\o & \pp0.1 $\pm$ 0.5 &  3.8 $\pm$ 0.5 & $-$0.56 $\pm$ 0.14 & 3400 \\
-RSG25 & 3 & 3910 $\pm$ 100  & \pp0.6 $\pm$ 0.5 & 3.0 $\pm$ 0.4 & $-$0.58 $\pm$ 0.24 & 3400 & & 3910 $\pm$ 100  & \pp0.6 $\pm$ 0.5 &  3.0 $\pm$ 0.4 & $-$0.58 $\pm$ 0.24 & 3400 \\
-RSG29 & 4 & 3980 $\pm$ 60\o & \pp0.1 $\pm$ 0.4 & 3.7 $\pm$ 0.4 & $-$0.38 $\pm$ 0.16 & 3400 & & 3990 $\pm$ 80\o & $-$0.1 $\pm$ 0.5 &  3.6 $\pm$ 0.4 & $-$0.44 $\pm$ 0.17 & 3400 \\
-RSG30 & 14& 3900 $\pm$ 80\o & $-$0.3 $\pm$ 0.5 & 3.7 $\pm$ 0.4 & $-$0.67 $\pm$ 0.16 & 3600 & & 3850 $\pm$ 80\o & $-$0.3 $\pm$ 0.5 &  3.5 $\pm$ 0.4 & $-$0.59 $\pm$ 0.19 & 3600 \\
-RSG34 & 15& 3870 $\pm$ 80\o & $-$0.4 $\pm$ 0.5 & 4.2 $\pm$ 0.5 & $-$0.53 $\pm$ 0.19 & 3600 & & 3850 $\pm$ 60\o & $-$0.3 $\pm$ 0.4 &  4.3 $\pm$ 0.5 & $-$0.49 $\pm$ 0.17 & 3600 \\
 % RSG36 & 1 & 3840 $\pm$ 120  & \pp0.6 $\pm$ 0.5 & 3.0 $\pm$ 0.4 & $-$0.52 $\pm$ 0.26 & 3300 & & 3930 $\pm$ 100  & \pp0.6 $\pm$ 0.4 &  2.9 $\pm$ 0.4 & $-$0.39 $\pm$ 0.25 & 3300 \\
 % RSG39 & 19& 3870 $\pm$ 130  & \pp0.5 $\pm$ 0.5 & 2.4 $\pm$ 0.5 & $-$0.73 $\pm$ 0.26 & 3000 & & 3800 $\pm$ 120  & \pp0.4 $\pm$ 0.5 &  2.1 $\pm$ 0.5 & $-$0.58 $\pm$ 0.33 & 3000 \\
-RSG40 & 17& 3910 $\pm$ 110  & $-$0.5 $\pm$ 0.5 & 3.6 $\pm$ 0.5 & $-$0.20 $\pm$ 0.21 & 2900 & & 3880 $\pm$ 110  & $-$0.5 $\pm$ 0.5 &  3.6 $\pm$ 0.5 & $-$0.15 $\pm$ 0.24 & 2900 \\
 % RSG45 & 24& 4220 $\pm$ 120  & \pp0.6 $\pm$ 0.5 & 2.9 $\pm$ 0.4 & $-$0.24 $\pm$ 0.20 & 3200 & & 4290 $\pm$ 120  & \pp0.6 $\pm$ 0.5 &  3.0 $\pm$ 0.5 & $-$0.27 $\pm$ 0.22 & 3200 \\
 % RSG47 & 22& 3980 $\pm$ 90\o & \pp0.4 $\pm$ 0.4 & 3.2 $\pm$ 0.4 & $-$0.57 $\pm$ 0.23 & 2700 & & 3950 $\pm$ 100  & \pp0.4 $\pm$ 0.4 &  3.3 $\pm$ 0.4 & $-$0.64 $\pm$ 0.24 & 2700 \\
-RSG49 & 21& 3890 $\pm$ 120  & \pp0.1 $\pm$ 0.5 & 3.0 $\pm$ 0.4 & $-$0.43 $\pm$ 0.28 & 2900 & & 3890 $\pm$ 120  & \pp0.1 $\pm$ 0.5 &  3.0 $\pm$ 0.4 & $-$0.43 $\pm$ 0.28 & 2900 \\
-RSG55 & 18& 3810 $\pm$ 130  & \pp0.4 $\pm$ 0.5 & 2.2 $\pm$ 0.4 & $-$0.68 $\pm$ 0.31 & 2800 & & 3740 $\pm$ 130  & \pp0.4 $\pm$ 0.5 &  2.1 $\pm$ 0.5 & $-$0.54 $\pm$ 0.41 & 2800 \\
 
   \hline
   \end{tabular}
   \end{center}
 \end{table*}
 
-\subsection{Stellar Parameters} % (fold)
-\label{sub:stellar_parameters}
+\subsection{Stellar Parameters and Metallicity} % (fold)
+\label{sub:stellar_parameters_and_metallicity}
 
-Table~\ref{tab:stellar_params} displays the derived stellar parameters.
-For the reminder of this paper, when discussing stellar parameters,
-we exclusively use the parameters derived using the 24-arm telluric method (i.e. the left hand results in table~\ref{tab:stellar_params}.)
-
-Figure~\ref{fig:6822HRD} shows the HR diagram for RSGs.
-Bolometric corrections are computed for RSGs in
-\cite{Davies13a}.
-This figure shows that the temperatures derived using the J-band analysis method are systematically lower than evolutionary tracks for
-$Z=0.002$ and $v/v_{c} = 0.4$
-\citep{2013A&A...558A.103G}.
-This is discussed in Section~\ref{sub:stellar_parameters}.
-% stellar parameters are in agreement with the evolutionary tracks for
-% $Z=0.002$ and $v/v_{c} = 0.4$
-% \citep{2013A&A...558A.103G}
-
-
-\begin{figure}
-\includegraphics[width=9.0cm]{figures/N6822_HRD}
-\caption{
-HR diagram (HRD) for 11 NGC\,6822 RSGs.
-Evolutionary tracks are shown in grey with
-$Z=0.002$ and $v/v_{c} = 0.4$ along with their zero-age mass
-\protect\citep{2013A&A...558A.103G}.
-We note that compared to the evolutionary tracks overplotted,
-the observed temperatures of NGC\,6822 RSGs are systematically cooler.
-This is discussed in Section~\ref{sub:temperatures_of_rsgs}.
-}
-\label{fig:6822HRD}
-\end{figure}
-
+Table~\ref{tb:stellar-params} summarises the derived stellar parameters.
+For the remainder of this paper, when discussing stellar parameters,
+we exclusively use the parameters derived using the 24-arm telluric method (i.e. the left-hand results in Table~\ref{tb:stellar-params}.)
 
 The average metallicity for our sample of 11 RSGs in NGC\,6822 is
 $\bar{Z} = -0.52\pm 0.21$.
 This result is in good agreement with the average metallicity derived in
 NGC\,6822 from blue supergiant stars (BSGs)
-\citep{2001ApJ...547..765V,1999A&A...352L..40M}.
-% The scatter on this value ($\sim 0.5$) is slightly larger than expected, however this remains consistent within the uncertainties.
+\citep{1999A&A...352L..40M,2001ApJ...547..765V}.
+Excluding the potential outlier (RSG5) from this analysis does not affect the average metallicity measurement.
 
+A direct comparison between the metallicities of the objects mentioned above is legitimate as results derived from the analysis used here yield a global metallicity ([Z]) which
+closely resembles the iron to hydrogen ratio ([Fe/H]) derived using BSGs.
+While our [Z] measurements are also affected by Si, Mg and Ti,
+we assume [Z]~=~[Fe/H] for the purposes of our discussion.
+Likewise, metallicity measurements derived using H\2 regions yields oxygen abundances which can be compared
+to [Z] by introducing the solar oxygen abundance
+{12+log(O/H)}$_{\odot}$=8.69
+\citep{2009ARA&A..47..481A} through the relation
+[Z]=12+log(O/H)$-$8.69.
 
-To quantify spatial variations in chemical abundances the radial distance from the centre of
-NGC\,6822 is compared to the metallicity derived for each target in
+Physically, the metallicities derived using RSGs, BSGs and H\2 regions are comparable as these objects represent similar stellar populations within this galaxy.
+The RSG and BSG stage are different evolutionary stages within the life cycle of a massive star.
+H\2 regions, however, are the birth clouds which give rise to the most current stellar populations.
+As we know the lifetime of RSGs/BSGs is $<50$Myr,
+metallicity measurements from these stars are expected to represent the metallicities of their birth clouds.
+
+To investigate spatial variations in chemical abundances in NGC\,6822, we show the metallicities of our RSGs as a function of radial distance from the centre of the galaxy 
 Figure~\ref{fig:ZvsR}.
-It is clear from this figure that we have no evidence for an abundance gradient in
-NGC\,6822.
-% This is also shown in Figure~\ref{fig:Zcolorbar} where the positions of the confirmed RSGs (with their markers scaled by the derived metallicity value) are overlaid on a DSS image of NGC\,6822.
 
-% \textbf{How does this compare to the SMC and other dwarf irregular galaxies?}
-% \begin{itemize}
-%     \item Compare to the spatial distribution of SMC stars in Bens paper
-% \end{itemize}
+A least-squares fit to the data reveals a low-significance abundance gradient within the central 1\,kpc of NGC\,6822 of $-0.52\pm0.35$dex/kpc
+The central metallicity (i.e. where R=0) of [Z]$=-0.3\pm0.15$ derived using the the least-squares fit remains consistent with the average metallicity assuming no gradient.
 
 \begin{figure}
-\includegraphics[width=9.0cm]{figures/N6822_ZvsR}
+\includegraphics[width=9.0cm]{figures/N6822_ZvsR_BSG}
 \caption{
-Derived metallicities for 11 RSGs shown against their radial positions from the centre of NGC\,6822.
-A least-squares fit to the data reveals a weak abundance gradient
-($-0.52\pm 0.35\times R - 0.30\pm 0.15$)dex/kpc with a $\chi^{2}_{red}=1.1$.
-Assuming no abundance gradient,
-the average metallicity for NGC\,6822 is $\bar{Z} = -0.52\pm 0.21$.
-% which is statistically consistent with the central metallicitiy derived from the fit.
-% We see no evidence for an abundance gradient in this galaxy.
-R25 $= 460 arcseconds$ ($=1.12kpc$)
+Derived metallicities for 11 RSGs in NGC\,6822 shown against their distance from the galaxy centre.
+The average metallicity for is
+$\bar{Z} = -0.52\pm 0.21$.
+A least-squares fit to the data reveals a low-significance abundance gradient
+[Z]~=~$(-0.30\pm0.15)+(-0.52\pm0.35)R$ with a $\chi^{2}_{red}=1.14$.
+Black points show metallicities derived in this study.
+Blue points show the results from two A-type supergiant stars from
+\protect\cite{2001ApJ...547..765V}.
+Red points show the results from three BSG from
+\protect\cite{1999A&A...352L..40M}.
+Including these results into the fit we obtain a slightly shallower gradient
+$-0.35\pm0.28$ dex\,kpc$^{-1}$ with an improved $\chi^{2}_{red}=0.72$.
+R25 $= 460 \arcsec$ ($=1.12kpc$)
 \citep{2012AJ....144....4M}.
-% Derived metallicities are statistically consistent with a Gaussian distribution about the mean.
-         }
+Note,
+\cite{1999A&A...352L..40M} do not quote individual metallicity values therefore the quoted average value is the value adopted for all.
+        }
 \label{fig:ZvsR}
 \end{figure}
 
-% \begin{figure*}
-%  \includegraphics[width=12.0cm]{figures/N6822_RSG_z_colorbar}
-%  \caption{
-%           Positions of RSG targets overlaid on a Digital Sky Survey (DSS) image of NGC\,6822 (identical to that in Figure~\ref{fig:N6822}).
-%           Markers for each RSG are scaled by their derived metallicity value.
-%           The average metallicity for NGC\,6822 from RSGs is $\bar{Z} = -0.52\pm 0.21$.
-%           We find no evidence of a metallicity gradient in NGC\,6822 based on stellar metallicities from 18 RSGs across the spatial extend of the central regions of NGC\,6822.
-%          }
-%  \label{fig:Zcolorbar}
-% \end{figure*}
+Figure~\ref{fig:6822HRD} shows the location of RSGs on the H-R diagram for RSGs.
+Bolometric corrections are computed using the calibration in
+\cite{Davies13a}.
+This figure shows that the temperatures derived using the J-band analysis method are systematically cooler than the end of the evolutionary models for
+$Z=0.002$
+\citep{2013A&A...558A.103G}.
+This is discussed in Section~\ref{sub:temperatures_of_rsgs}.
+
+
+\begin{figure}
+\includegraphics[width=9.0cm]{figures/N6822_HRD}
+\caption{
+H-R diagram (HRD) for 11 NGC\,6822 RSGs.
+Evolutionary tracks including rotation
+($v/v_{c} = 0.4$) for SMC-like metallicity ($Z=0.002$) are shown in grey with
+along with their zero-age mass
+\protect\citep{2013A&A...558A.103G}.
+Bolometric corrections are computed using the calibration in
+\protect\cite{Davies13a}.
+We note that compared to the evolutionary tracks,
+the observed temperatures of NGC\,6822 RSGs are systematically cooler.
+This is discussed in Section~\ref{sub:temperatures_of_rsgs}.
+}
+\label{fig:6822HRD}
+\end{figure}
 
 % subsection stellar_parameters (end)
 % section results (end)
@@ -931,7 +872,7 @@ R25 $= 460 arcseconds$ ($=1.12kpc$)
 \subsection{Observing Strategy} % (fold)
 \label{sub:observing_strategy}
 
-Throughout these observations we have used a O,\,S,\,O,\,O observing strategy.
+Throughout these observations we used a O,\,S,\,O,\,O observing strategy.
 However, in eight cases the sky subtraction process left weak residual features in the reduced spectra.
 Reducing these cases with the \textquoteleft sky\_tweak\textquoteright
 ~option within the KMOS/esorex reduction pipeline was ineffective to improve the subtraction of these features.
@@ -942,259 +883,219 @@ We are currently developing an additional cross IFU sky subtraction routine whic
 
 Based on the results of our comparison between the two different telluric methods with KMOS,
 it is sufficient for our analysis to use the more efficient 3-arm method.
-However, due to concerns around the sky subtraction process and residuals from this process,
+However, due to concerns around the sky subtraction and residuals from this process,
 we caution against using this approach until a method with which we can standardise the resolution across each IFU is implemented.
-% For future observing runs this will aid the planning of observing as well as improving observing efficiency.
-We have shown that the stellar parameters derived with KMOS, at a resolution of $\sim$3000 and a S/N $\ge$ 100, are stable with respect to the choice of telluric spectrum for 11 of our observed RSGs.
-
-
-% To supplement the 3AT recipe which we have shown is sufficient for our analysis, the new telluric correction software {\sc MOLECFIT} has shown great potential in this area~\citep{2014ASPC..485..403K}.
-% This new software does not require a telluric standard star in order to derive a telluric spectrum and thus could be used in tandem with the three-arm telluric method to produce a more reliable correction.
-% Our first tests with this software have been encouraging and more work in this area is ongoing.
-
-% In addition to the improved efficiency in the telluric standard star we also note that the recently developed telluric correction tool {\sc MOLECFIT} has potential to improve observing efficiency even further as this tool does not use a telluric standard star to derive a telluric spectrum
+We have shown that the stellar parameters derived with KMOS,
+at a resolution of $\sim$3000 and a S/N $\ge$ 100,
+are stable with respect to the choice of telluric spectrum for 11 of our observed RSGs.
 
 % subsection observing_strategy (end)
-\subsection{Abundance Measurements} % (fold)
-\label{sub:abundance_measurements}
+\subsection{Metallicity Measurements} % (fold)
+\label{sub:metallicity_measurements}
 
-% Using observations of RSGs in the J-band we derive metallicities for 11/18 RSGs.
-We find an average metallicity for NGC\,6822 of $\bar{Z} = -0.52\pm 0.21$
-which agrees well with the average metallicity derived from blue supergiants (BSGs)
-\citep{2001ApJ...547..765V,1999A&A...352L..40M} and H\2 regions
+We find an average metallicity for NGC\,6822 of $\bar{Z}=-0.52\pm 0.21$
+which agrees well with the results derived from BSGs
+\citep{1999A&A...352L..40M,2001ApJ...547..765V,Przybilla02} and H\2 regions
 \citep{2006ApJ...642..813L} in NGC\,6822.
 
-
-Additionally, we find no evidence for an abundance gradient within the central 1.2\,kpc in NGC\,6822.
-Within the last 15 years,
-there have been various studies into the potential chemical gradient of NGC\,6822.
-These studies have focused on different aspects of NGC\,6822 such as H\2 regions
-\citep{2006ApJ...647..970L} or the old stellar population
-\citep{2005A&A...429..837C} which has been supplemented by studies of small numbers of younger blue supergiant stars (BSGs)
-\citep{2001ApJ...547..765V,1999A&A...352L..40M}.
-\cite{2006ApJ...642..813L} use five H\2 regions within NGC\,6822 to derive a low significance [O/H] chemical gradient ($-0.14\pm 0.07$ dex kpc$^{-1}$).
-More recently,
-an analysis of a large number of asymptotic giant branch (AGB) stars showed no evidence for an abundance gradient within the old stellar population within 4\,kpc
-\citep{2012A&A...540A.135S}.
-Using spatial variations in the ratio of the numbers of carbon-rich (C-type) to oxygen-rich (M-type) AGB stars
-these authors quote a metallicitiy gradient of [Fe/H] = $-$1.29($\pm$0.04) $-$ 0.008($\pm$0.023) $\times$ dist/kpc.
-
-% These studies have been based on analysis of H\2 regions,
-% such as~\cite{2006ApJ...642..813L} who find a low-significance abundance gradient based on spectra from 19 H\2 regions.
-% Other studies have focused on the old stellar population of NGC\,6822, for example,
-% \cite{2005A&A...429..837C} explain variations in the ratio of oxygen-rich and carbon-rich asymptotic giant branch stars through metallicity variations or
-% \cite{2005A&A...429..837C}, who derive metallicities of 23 red giant branch stars and note that they observe a large range in metallicities, however, they do not observe any gradient.
-
-% By compiling metallicity measurements from 19 H\2 regions~\cite{2006ApJ...642..813L} find a low-significance abundance gradient.
-% Likewise, using a technique based on deriving the ratio between the oxygen-rich and carbon-rich asymptotic giant branch stars~\cite{2005A&A...429..837C} explain variations in this ratio (the C/M ratio) through metallicity variations.
-% \cite{2001MNRAS.327..918T} use observations of red giant branch stars to derive metallicities for 23 stars in NGC\,6822 and note that they observe a large range in metallicities, however, they do not observe any gradient.
-
-BSGs and RSGs belong to the youngest stellar population in NGC\,6822,
-therefore their derived metallicities should represent the most metal enhanced population in their local environments.
-BSGs are either younger or older than RSGs depending on the exact stage of their evolution but at most this difference is a few million years.
-Therefore, we would expect their chemical abundances to be comparable.
-Including the studied BSGs within our analysis adds confidence to the result that there exists no metallicity gradient in young population within 1.2\,kpc of the centre of NGC\,6822.
-Figure~\ref{fig:ZvsR_BSG} displays metallicities derived for targets within this study, as well as those of
+We also find evidence for a low-significance metallicity gradient within the central 1\,kpc in NGC\,6822
+($-0.52\pm0.35$ dex\,kpc$^{-1}$; see Figure~\ref{fig:ZvsR}).
+The gradient derived is consistent with the trend reported in
+\cite{2001ApJ...547..765V} who derived metallicities of BSGs and combined that with some of the best available H\2 region data.
+The gradient is also consistent with the metallicity gradient derived from a sample of 49 local star-forming galaxies (Ho et al. in prep). 
+\textbf{Include in reference list!}
+Including the results for BSGs from
 \cite{2001ApJ...547..765V} and
-\cite{1999A&A...352L..40M}, as a function of radial distance from the centre of NGC\,6822.
-Metallicities from all BSGs are quoted as [Fe/H], for the purposes of our comparison we assume [Fe/H] = A $\times$ [Z], where A = 1.0.
-\cite{1999A&A...352L..40M} estimates average metallicity for three BGSs as
-[Fe/H]$=-0.5\pm 0.2$, which we assign to all three stars.
+\cite{1999A&A...352L..40M} in our analysis,
+results in a somewhat shallower gradient
+($-0.35\pm 0.28$ dex\,kpc$^{-1}$)
+with a slightly reduced 
+$\chi^{2}_{red}=0.72$.
 
-% Recent studies of the older stellar population in NGC\,6822 show that that there exists no significant metallicity gradient within the central 4\,kpc of NGC\,6822
-% \cite{2012A&A...540A.135S}.
-% This agrees well with our findings that within the disk/bar of the galaxy, there is no significant metallicity gradient among the youngest stellar population.
+A discussion on why we are able to directly compare these results using different objects and yielding different tracers of metallicity (i.e. [Z], [Fe/H] and [O/H]) is given in
+Section~\ref{sub:stellar_parameters_and_metallicity}.
 
-We have shown that our results agree with the metallicities derived from previous studies of young massive stars in NGC\,6822 as well as recent results from
-\cite{2012A&A...540A.135S}.
-We note that,
-the metallicity of the older stellar population in the centre of NGC\,6822,
-is significantly more metal poor than the young population
-([Fe/H]$ = -1.29 \pm 0.04$).
-This could be explained via gas enrichment which has taken place in the intervening time between the birth of the stars within these studies.
-% 11Gyrs between the birth of the stars in these studies.
-\textbf{Is there a way to test whether this much enrichment is expected?}
+\cite{2006ApJ...642..813L} use various H\2
+regions and find no clear evidence for a metallicity gradient.
+Using a consistent subset of the highest quality H\2
+region data available these authors find a gradient of
+$-0.16\pm0.05$dex\,kpc$^{-1}$.
+Including these results into our analysis degrades the fit and changes the derived gradient significantly
+($-0.18\pm0.05$ dex\,kpc$^{-1}$; $\chi^{2}_{red}=1.78$).
+At this point it is not clear whether the indication of a gradient obtained from the RSGs and BSGs is just an artefact of the small sample size or indicates a difference with respect to the
+H\2 region study.
 
+\cite{2012A&A...540A.135S} derive metallicities using a population of asymptotic giant branch (AGB) stars within the central 4\,kpc of NGC\,6822.
+The find an average metallicity of [Fe/H] $=-1.29\pm0.07$dex.
+Likewise
+\cite{2013ApJ...779..102K}
+use spectra of red giant stars within the central 2\,kpc and find an average metallicity of
+[Fe/H] $=-1.05\pm0.49$.
+These authors find no compelling evidence for spatial variations in metallicity.
+The stellar populations used for these studies are known to be significantly older than the RSGs,
+therefore, owing to the chemical evolution in the time between the birth of these populations, we expect the measured metallicities to be significantly lower.
+Additionally we expect a shallower metallicity gradient in these populations as the stellar motions act to smooth out abundance gradients over time.
+Therefore it is unsurprising that these authors see no evidence for abundance gradients.
 
-% In this study we observe stars among the youngest population of NGC\,6822, the metallicities we derive represent an upper limit of the metallicity within this galaxy.
-% Previous analyses of metallicity gradients within this galaxy have focused on the older populations (e.g. RGB \& AGB stars).
-% The studies of young stars~\citep{2001ApJ...547..765V,1999A&A...352L..40M} have only presented results from two and three BSGs respectively.
-% Based on the quantitative metallicity results from all young stars within this galaxy~\cite{2001ApJ...547..765V} we conclude that there exists no significant metallicity gradient among this population within the central 1.2\,kpc.
-% Figure~\ref{fig:ZvsR_BSG} illustrates this for all of the young stars in NGC\,6822 with available metallicity estimates.
-% Metallicities from BSGs are quoted as [Fe/H], for the purposes of comparison we assume [Fe/H] = A $\times$ [Z], where A = 1.0.
-% \cite{1999A&A...352L..40M} qualitatively estimates metallicity for each of the three stars within the sample as [Fe/H]$=-0.5\pm 0.2$.
+The low metallicity of the young stellar population and the ISM in NGC 6822 can be easily understood as a consequence of the fact that it is a relatively gas rich galaxy with a mass
+M$_{HI}$ = 1.38$\times$10$^{8}$ M$_{\odot}$
+\citep{2004AJ....128...16K} and a total stellar mass of
+M$_{*}$ = 1$\times$10$^{8}$ M$_{\odot}$
+\citep{2014ApJ...789..147W}.
+The simple closed box chemical evolution model relates the metallicity mass fraction Z(t) at any time to the ratio of stellar to gas mass $M_{*}\over M_{g}$ through
 
-\begin{figure}
-\includegraphics[width=9.0cm]{figures/N6822_ZvsR_all}
-\caption{
-Derived metallicities for a 11 RSGs in NGC\,6822 shown against their positions from the galaxy centre.
-The average metallicity for is
-$\bar{Z} = -0.52\pm 0.21$.
-We see no evidence for an abundance gradient in this galaxy.
-Blue points show the results from two A-type supergiant stars from
-\protect\cite{2001ApJ...547..765V}.
-Red points show the results from three BSG from
-\protect\cite{1999A&A...352L..40M}.
-R25 $= 460 arcseconds$ ($=1.12kpc$)
-\citep{2012AJ....144....4M}.
-Note,
-\citep{2012AJ....144....4M} quote an average value for the three stars which is the value adopted for all three in this figure.
-\textbf{Do I need both Figure 10 \& 11?}
-% Derived metallicities are statistically consistent with a Gaussian distribution about the mean.
-        }
-\label{fig:ZvsR_BSG}
-\end{figure}
+\begin{equation}\label{closed-box}
+Z(t) = {y \over 1-R } \ln \left[ 1 + {M_{*}(t)\over M_{g}(t)}  \right],
+\end{equation}
 
-% \begin{itemize}
-%     \item Abundances tie in well with Venn et al 2001, what does this mean?
-%     \item Adding the remainder of the sample does not bias the sample, just increases the errors
-%     \item Abundance gradient -- no evidence. What does this tell us?
-% \end{itemize}
+where $y$ is the fraction of metals per stellar mass produced through stellar nucleosynthesis
+(the so-called yield) and R is the fraction of stellar mass returned to the ISM through stellar mass-loss.
+According to Kudritzki et al. (2014, in preparation) the ratio y/(1-R) can be empirically determined from the fact that the metallicity of the young stellar population in the solar neighborhood is solar with a mass fraction Z$_{\odot}$ =0.014
+\citep{2012A&A...539A.143N}.
+% (Nieva \& Przybilla, 2012).
+With a solar neighborhood ratio of stellar to gas mass column densities of 4.48
+\citep{2003ApJ...587..278W,2013ApJ...779..115B}
+one then obtains y/(1-R) = 0.0082 = 0.59Z$_{\odot}$ with an uncertainty of 15 percent dominated by the the 0.05 dex uncertainty of the metallicity determination of the young population in the solar neighbourhood.
+Accounting for the presence of helium and metals in the neutral interstellar gas we can turn the observed HI mass in NGC 6822 into gas mas via M$_{g}$ = 1.36 M$_{HI}$ and use the simple closed box model to predict a metallicity of [Z] = $-0.6\pm0.05$ in good agreement with our value obtained from RSG spectroscopy.
+
+As discussed above the older stellar population of AGB stars has a metallicity roughly 0.7 dex lower than what we measure for the RSGs. In the framework of the simple closed box model this would correspond to a period in time where the ratio of stellar to gas mass was 0.07
+(much lower than the present value of 0.53) and the stellar mass was only
+$0.19\times10^{8}$M$_{\odot}$.
+The present star formation rate of NGC 6822 is 0.027 M$_{\odot}$yr$^{-1}$
+\citep{1996A&A...308..723I,2006ApJ...652.1170C,2010A&A...512A..68G}.
+% (Gratier et al., 2010, Cannon et al., 2006, Israel et al., 1996).
+At such a high level of star formation it would have taken three Gyr to produce the presently observed stellar mass and to arrive from the average AGB-star metallicity level at the metallicity of the young stellar population, of course, again relying on the simple closed box model.
+With a lower star formation rate it would have taken correspondingly longer.
+
+Given the irregularities present in the morphology of NGC\,6822 this galaxy may not be a good example of a closed box system, however it is remarkable that the closed box model reproduces the observed metallicity so closely.
+
+% \cite{2013ApJ...779..102K} use two variations of the closed box chemical evolution model and find the model which represents the data best to be the model including a gas accretion term, the so called accertion model.
+% However, these authors do note that dwarf irregular galaxies in general can be explaind by the more simple leaky box model. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Not sure if I should comment on this ... 
+%%% Question Chris/Rolf?
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % subsection abundance_measurements (end)
 
 \subsection{Temperatures of RSGs} % (fold)
 \label{sub:temperatures_of_rsgs}
 
-Effective temperatures have been derived for 11 targets from our observed sample in NGC\,6822.
+Effective temperatures have been derived for 11 RSGs from our observed sample in NGC\,6822.
 To date, this represents the fourth data set used to derive stellar parameters in this way and the first with KMOS.
 The previous three data sets which have been analysed in this way are those of 11 RSGs in PerOB1,
-a galactic star cluster, from
-\cite{2014ApJ...788...58G}, nine RSGs in the LMC and 10 RSGs in the SMC, both from
-\cite{Davies14}.
+a Galactic star cluster
+\citep{2014ApJ...788...58G}, nine RSGs in the LMC and 10 RSGs in the SMC
+\citep[both from][]{Davies14}.
 These results span a range of $\sim$0.7dex in metallicity ranging from Z=Z$_{\odot}$ in PerOB1 to Z=0.3Z$_{\odot}$ in the SMC.
 
 We compare the effective temperatures derived in this study to those of the previous results in different environments.
-Their distribution is shown as a function of metallicitiy in Figure~\ref{fig:TvsZ}.
-Additionally, Figure~\ref{fig:HRD} shows the HR diagram for RSGs in LMC, SMC and NGC\,6822 RSGs.
-% The mean value for effective temperature is 3940$\pm$107 K.
-From these figures, we see no evidence for an evolution in average temperatures of RSGs with respect to environment.
-This is in contrast to current evolutionary models which predict a change of $\sim$450K for a $M=15M_{\odot}$ model,
-over a range of 0.7dex~\citep{Ekstrom12,2013A&A...558A.103G}.
-For solar metallicitiy models observations in PerOB1 are in good agreement with evolutionary models
-\citep[see Figure 9 in][]{2014ApJ...788...58G}.
-However, at SMC-like metalicitiy, the evolutionary models are systematically warmer than the observations.
+Their distribution is shown as a function of metallicity in Figure~\ref{fig:TvsZ}.
+Additionally, Figure~\ref{fig:HRD} shows the H-R diagram for the same data set.
+As mentioned above, stellar parameters have been derived in a consistent way for this data set. 
+Bolometric corrections for the entire sample are computed using the calibration in
+\cite{Davies13a}.
 
-There is evidence however,
-that the average spectral type of RSGs is a function of metallicitiy over this range in metallicitiy
-\citep{Levesque12}.
-We argue that these conclusions are not mutually exclusive.
-Spectral types are derived for RSGs using the optical TiO bandheads at 0.65$\mu$m,
-whereas in this study temperatures are derived using the elemental features in the J-band.
-The trend in spectral type as a function of metallicitiy is explained by noting that the layer at which the TiO molecule is formed within the star, is its-self a function of metallicitiy.
-This means at lower metallicitiy the TiO molecule is formed in a higher layer,
-which gives rise to a shift in average spectral type with respect to metallicitiy.
-This behaviour is much less extreme when considering elemental spectral features,
-as the layer which these features are formed is a weaker function of metallicity.
-Therefore, eventhough spectral type of RSGs is dependent upon metelliaicity,
-we have demonstrated that there is no dependence on temperature.
-\textbf{should come back to this. Not sure if I understand it fully!}
-
-% The spectroscopic HR diagram~\citep{2014A&A...564A..52L} for our targets as well as all RSGs which have had stellar parameters derived in this way, is displayed in Figure~\ref{fig:sHRD}.
-% Evolutionary tracks from~\cite{Ekstrom12} at $Z = 0.014$ and $v/v_{c} = 0.4$ are over-plotted.
-
-% \begin{figure}
-% \includegraphics[width=9.0cm]{figures/N6822_Teff_hist}
-% \caption{
-% Effective temperatures for all RSGs derived using the J-band method, including those from this study,
-% \protect\cite{Davies14} and
-% \protect\cite{2014ApJ...788...58G};
-% with a metallicity range of 0.7 dex.
-% This distribution is consistent with a Gaussian distribution about the mean.
-% Therefore we see no evidence of an evolution in temperature of RSGs with respect to their environment.
-%          }
-%  \label{fig:Teffhist}
-% \end{figure}
 
 \begin{figure}
 \includegraphics[width=9.0cm]{figures/N6822_TeffvsZ_all}
 \caption{
-Effective temperatures shown as a function of metallicitiy for four different data sets using the J-band analysis technique.
-We show that there exists no evolution in the temperature of RSGs over a range of 0.7 dex.
+Effective temperatures shown as a function of metallicity for four different data sets using the J-band analysis technique.
+We show that there appears to be no significant evolution in the temperatures of RSGs over a range of 0.7 dex.
 These data sets are compiled from the LMC, SMC
 \protect\citep[blue and red points respectively;][]{Davies14}, PerOB1
-\protect\citep[a galactic RSG cluster; cyan points;][]{2014ApJ...788...58G} and those from NGC\,6822 presented in this study.
+\protect\citep[a Galactic RSG cluster; cyan points;][]{2014ApJ...788...58G} and NGC\,6822
+(green points).
+Mean values for each data set are enlarged data points in the same style.
+The x-axis is reversed for comparison with Figure~\ref{fig:HRD}.\label{fig:TvsZ}
          }
- \label{fig:TvsZ}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=9.0cm]{figures/N6822_HRD_all}
 \caption{
-HR diagram (HRD) for red supergiants in the LMC, SMC and NGC\,6822 which have stellar parameters obtained using the J-band method.
-This figure shows that there is no temperature evolution of RSGs between the three studies.
+H-R diagram (HRD) for red supergiants in the LMC, SMC and NGC\,6822 which have stellar parameters obtained using the J-band method.
+This figure shows that there appears to be no significant temperature evolution of RSGs between the three studies.
 NGC\,6822 targets from this study are shown with green circles.
-LMC and SMC RSGs frome
-\protect\cite{2014ApJ...788...58G}.
-shown in blue triangles and red squares respectively.
-Evolutionary models shown in grey are from
-\protect\cite{2013A&A...558A.103G} at an SMC-like metallicity of
-Z=0.002Z$_{\odot}$ and $v/v_{c} = 0.4$.
+LMC and SMC RSGs from
+\protect\cite{Davies14}
+are shown with blue triangles and red squares, respectively.
+Solid grey lines show SMC-like metallicity evolutionary models including rotation
+\protect\citep{2013A&A...558A.103G}.
+Dashed grey lines show solar metallicity evolutionary models including rotation
+\protect\citep{Ekstrom12}.\label{fig:HRD}
         }
-\label{fig:HRD}
 \end{figure}
 
-% subsection temperatures_of_rsgs (end)
 
+From these figures, we see no evidence for an variation in average temperatures of RSGs with respect to metallicity.
+This is in contrast to current evolutionary models which display a change of $\sim$450K,
+for a $M=15M_{\odot}$ model,
+over a range of 0.7dex~\citep{Ekstrom12,2013A&A...558A.103G}.
+
+For solar metallicity models, observations in PerOB1 are in good agreement with the models
+\citep[see Figure 9 in][]{2014ApJ...788...58G}.
+However, at SMC-like metallicity, the end-points of the evolutionary models are systematically warmer than the observations.
+The temperature of the end-points of the evolutionary models of massive stars could depends on the choice of convective mixing length parameter
+\citep{1992A&AS...96..269S}.
+The observation that the models produce a lower temperature could imply that the choice of a solar-like mixing length parameter does not hold for higher mass stars at lower metallicity.
+
+There is evidence however,
+that the average spectral type of RSGs tends towards an earlier spectral type with decreasing metallicity over this range
+\citep{Levesque12}.
+We argue that these conclusions are not mutually exclusive.
+Spectral types are derived for RSGs using the optical TiO band-heads at
+$\sim$0.65$\mu$m,
+whereas in this study temperatures are derived using near-IR atomic features
+(as well as the line-free pseudo-continuum).
+Recently,
+\cite{Davies13a} showed that the strength of TiO bands are dependent upon metallicity and that at lower metallicity, the TiO bands are significantly weaker.
+Therefore, although historically spectral type has been used as a proxy for temperature this assumption does not provide an accurate picture for RSGs.
+
+% The trend in spectral type (or strength of the TiO absorption features) can be naturally explained by the decreasing abundance of the TiO molecule in lower metallicity environments.
+
+% subsection temperatures_of_rsgs (end)
 
 % section discussion (end)
 
 \section{Conclusions} % (fold)
 \label{sec:conclusions}
 
-We present KMOS observations of red supergiant stars (RSGs) in NGC\,6822.
-These stars are shown to reside within their host galaxy based on their calculated radial velocities.
+KMOS spectroscopic observations of red supergiant stars (RSGs) in NGC\,6822 are presented.
 The data from these stars is telluric corrected in two different ways and the standard KMOS 3-arm telluric reduction is shown to work as effectively (in most cases) as the more time expensive 24-arm telluric reduction.
 
 Stellar parameters are calculated for 11 RSGs using the J-band analysis method outlined in
 \cite{Davies10}.
 The average metallicity within NGC\,6822 is
-$\bar{Z} = -0.52\pm 0.21$ and our data is consistent with no metallicity gradient within the central 1.2\,kpc of this galaxy.
-We include stellar metallicity measurements from previous studies of young stars within this galaxy and argue that these data support our conclusion that we find no metallicity gradient within this galaxy.
+$\bar{Z} = -0.52\pm 0.21$.
+We find an indication of a metallicity gradient within the central 1\,kpc,
+however with a low significance caused by small size of our RSG sample.
+Stellar metallicity measurements from previous studies of young stars within this galaxy are compared and show that these data are consistent with our conclusions.
+We compare the derived metallicity gradient to that of previous studies and find consistent results.
+Using a closed box chemical evolution model,
+measurements of the young and old stellar populations of NGC\,6822 can be explained through chemical evolution. 
+We note that the closed box model is unlikely to be a good assumption for this galaxy given its morphology.
+To conclusively determine the metallicity gradient among the young population within NGC\,6822 a larger systematic study of RSGs using this analysis is needed.
 
-The effective temperatures of our RSGs are compared to that of all RSGs analysed in the same way.
-Using a data set which spans 0.7 dex in metallicity (solar-like to SMC-like) within four galaxies, we find no evidence for an evolution in effective temperature with respect to metallicity and that our data is consistent with a Gaussian distribution about the mean (see Figure~\ref{fig:Teffhist}).
+The effective temperatures of RSGs in this study are compared to those of all RSGs analysed in the same way.
+Using a data set which spans 0.7 dex in metallicity (solar-like to SMC-like) within four galaxies, we find no evidence for a systematic variation in average effective temperature with respect to metallicity.
+This is in contrast with evolutionary models for which a shift in metallicity of 0.7 dex produces a shift in the temperature of RSGs of up to 450K.
+We argue that an observed shift in average spectral type of RSGs observed over the same metallicity range (0.7dex) does not imply a shift in average temperature.
 
 These observations were taken as part of the KMOS Science Verification program.
-With guaranteed time observations we have obtained data for RSGs in NGC\,300 and NGC\,55 at distances of 1.9 and 2.2\,Mpc respectively,
-as well as observations of super-star clusters in M\,83 and the Antennae galaxy at 4.5 and 23\,Mpc respectively.
+With guaranteed time observations we have obtained data for RSGs in NGC\,300 and NGC\,55 at distances of $\sim$1.9\,Mpc,
+as well as observations of super-star clusters in M\,83 and the Antennae galaxy at 4.5 and 20\,Mpc respectively.
 Owing to the fact that RSGs dominate the light output from super-star clusters
-\citep{2013MNRAS.430L..35G} these clusters can be analysed in a similar manner
-\cite{2014ApJ...787..142G},
+\citep{2013MNRAS.430L..35G} these clusters can be analysed for abundance estimates in a similar manner
+\citep{2014ApJ...787..142G},
 which will provide metallicity measurements at distances a factor of 10 larger than using individual RSGs!
-% Using the approach described by
-% \cite{2014ApJ...787..142G} super-star clusters can be analysed in a similar manner which will provide metallicity measurements at distances a factor of 10 larger than using individual RSGs!
 This project forms the basis of an ambitious general observation proposal to survey a large number of galaxies in the Local Volume,
 motivated by the twin goals of investigating their abundance patterns,
 while also calibrating the relationship between galaxy mass and metallicity in the Local Group.
 
 % section conclusions (end)
-
-% Figures & Tables with no home yet!
-
-
-% \begin{figure}
-%  \includegraphics[width=9.0cm]{figures/N6822_BSG}
-%  \caption{
-%           Red supergiant (RSG) and blue supergiant (BSG) candidates overlaid on a Digital Sky Survey (DSS) image of NGC\, 6822.
-%           Red circles indicate locations of potential RSG candidates (like those in~\ref{fig:N6822}).
-%           Blue circles indicate locations of potential BSG candidates, using the criteria defined in ~\cite{Kudritzki12}.
-%           \textbf{... Not sure if 19 BSGs is enough to make anything of this. I also imagine we a hugely incomplete. Does Massey et al. (2006?) look at BSGs?}
-%          }
-%  \label{fig:BSGs}
-% \end{figure}
-    % \begin{itemize}
-        % \item Clearly recent star formation happening in the central regions.
-        % \item High density of RSGs in the south-east corner
-        % \item Low BSG/RSG ratio?
-        % \item \textbf{... Not sure if 19 BSGs is enough to make anything of this.}
-    % \end{itemize}
-
-
-
-
-
-
 
 
 %% If you wish to include an acknowledgments section in your paper,
@@ -1209,8 +1110,8 @@ while also calibrating the relationship between galaxy mass and metallicity in t
 
 \acknowledgments
 
-Who needs to acknowlege what? I'm not sure I need to acknowlege anything!
-
+We thank Mike Irwin for providing the photometric catalogue from the WFCAM observations.
+RPK and JZG acknowledge support by the National Science Foundation under grant AST-1108906
 %% To help institutions obtain information on the effectiveness of their
 %% telescopes, the AAS Journals has created a group of keywords for telescope
 %% facilities. A common set of keywords will make these types of searches
@@ -1226,7 +1127,7 @@ Who needs to acknowlege what? I'm not sure I need to acknowlege anything!
 %% copy editing.  Individual instruments or configurations can be provided
 %% in parentheses, after the keyword, but they will not be verified.
 
-{\it Facilities:} \facility{Nickel}, \facility{HST (STIS)}, \facility{CXO (ASIS)}.
+{\it Facilities:}, \facility{VLT (KMOS)}.
 
 %% Appendix material should be preceded with a single \appendix command.
 %% There should be a \section command for each appendix. Mark appendix
@@ -1261,327 +1162,48 @@ Who needs to acknowlege what? I'm not sure I need to acknowlege anything!
 %% delimit the year from the author name used in the citation.
 %% See the natbib documentation for more details and options.
 
-\begin{thebibliography}{}
-\bibitem[Auri\`ere(1982)]{aur82} Auri\`ere, M.  1982, \aap,
-    109, 301
-\bibitem[Canizares et al.(1978)]{can78} Canizares, C. R.,
-    Grindlay, J. E., Hiltner, W. A., Liller, W., \&
-    McClintock, J. E.  1978, \apj, 224, 39
-\bibitem[Djorgovski \& King(1984)]{djo84} Djorgovski, S.,
-    \& King, I. R.  1984, \apjl, 277, L49
-\bibitem[Hagiwara \& Zeppenfeld(1986)]{hag86} Hagiwara, K., \&
-    Zeppenfeld, D.  1986, Nucl.Phys., 274, 1
-\bibitem[Harris \& van den Bergh(1984)]{har84} Harris, W. E.,
-    \& van den Bergh, S.  1984, \aj, 89, 1816
-\bibitem[H\`enon(1961)]{hen61} H\'enon, M.  1961, Ann.d'Ap., 24, 369
-\bibitem[Heiles \& Troland(2003)]{heiles03} Heiles, C. \& Troland, T. H., 2003, \apjs, preprint doi:10.1086/381753
-\bibitem[Kim, Ostricker, \& Stone(2003)]{kim03} Kim, W.-T.,  Ostriker, E., \& Stone, J. M., 2003, \apj, 599, 1157
-\bibitem[King(1966)]{kin66}  King, I. R.  1966, \aj, 71, 276
-\bibitem[King(1975)]{kin75}  King, I. R.  1975, Dynamics of
-    Stellar Systems, A. Hayli, Dordrecht: Reidel, 1975, 99
-\bibitem[King et al.(1968)]{kin68}  King, I. R., Hedemann, E.,
-    Hodge, S. M., \& White, R. E.  1968, \aj, 73, 456
-\bibitem[Kron et al.(1984)]{kro84} Kron, G. E., Hewitt, A. V.,
-    \& Wasserman, L. H.  1984, \pasp, 96, 198
-\bibitem[Lynden-Bell \& Wood(1968)]{lyn68} Lynden-Bell, D.,
-    \& Wood, R.  1968, \mnras, 138, 495
-\bibitem[Newell \& O'Neil(1978)]{new78} Newell, E. B.,
-    \& O'Neil, E. J.  1978, \apjs, 37, 27
-\bibitem[Ortolani et al.(1985)]{ort85} Ortolani, S., Rosino, L.,
-    \& Sandage, A.  1985, \aj, 90, 473
-\bibitem[Peterson(1976)]{pet76} Peterson, C. J.  1976, \aj, 81, 617
-\bibitem[Rudnick et al.(2003)]{rudnick03} Rudnick, G. et al., 2003, \apj, 599, 847
-\bibitem[Spitzer(1985)]{spi85} Spitzer, L.  1985, Dynamics of
-    Star Clusters, J. Goodman \& P. Hut, Dordrecht: Reidel, 109
-\bibitem[Treu et al.(2003)]{treu03} Treu, T. et al., 2003, \apj, 591, 53
-\end{thebibliography}
+% Work around for refernces. Will need to change this for submission
+\bibliographystyle{mn2e}                      % The reference style
+\bibliography{journals}
 
-\clearpage
 
-%% Use the figure environment and \plotone or \plottwo to include
-%% figures and captions in your electronic submission.
-%% To embed the sample graphics in
-%% the file, uncomment the \plotone, \plottwo, and
-%% \includegraphics commands
-%%
-%% If you need a layout that cannot be achieved with \plotone or
-%% \plottwo, you can invoke the graphicx package directly with the
-%% \includegraphics command or use \plotfiddle. For more information,
-%% please see the tutorial on "Using Electronic Art with AASTeX" in the
-%% documentation section at the AASTeX Web site, http://aastex.aas.org/
-%%
-%% The examples below also include sample markup for submission of
-%% supplemental electronic materials. As always, be sure to check
-%% the instructions to authors for the journal you are submitting to
-%% for specific submissions guidelines as they vary from
-%% journal to journal.
+% \begin{thebibliography}{}
+% \bibitem[Auri\`ere(1982)]{aur82} Auri\`ere, M.  1982, \aap,
+%     109, 301
+% \bibitem[Canizares et al.(1978)]{can78} Canizares, C. R.,
+%     Grindlay, J. E., Hiltner, W. A., Liller, W., \&
+%     McClintock, J. E.  1978, \apj, 224, 39
+% \bibitem[Djorgovski \& King(1984)]{djo84} Djorgovski, S.,
+%     \& King, I. R.  1984, \apjl, 277, L49
+% \bibitem[Hagiwara \& Zeppenfeld(1986)]{hag86} Hagiwara, K., \&
+%     Zeppenfeld, D.  1986, Nucl.Phys., 274, 1
+% \bibitem[Harris \& van den Bergh(1984)]{har84} Harris, W. E.,
+%     \& van den Bergh, S.  1984, \aj, 89, 1816
+% \bibitem[H\`enon(1961)]{hen61} H\'enon, M.  1961, Ann.d'Ap., 24, 369
+% \bibitem[Heiles \& Troland(2003)]{heiles03} Heiles, C. \& Troland, T. H., 2003, \apjs, preprint doi:10.1086/381753
+% \bibitem[Kim, Ostricker, \& Stone(2003)]{kim03} Kim, W.-T.,  Ostriker, E., \& Stone, J. M., 2003, \apj, 599, 1157
+% \bibitem[King(1966)]{kin66}  King, I. R.  1966, \aj, 71, 276
+% \bibitem[King(1975)]{kin75}  King, I. R.  1975, Dynamics of
+%     Stellar Systems, A. Hayli, Dordrecht: Reidel, 1975, 99
+% \bibitem[King et al.(1968)]{kin68}  King, I. R., Hedemann, E.,
+%     Hodge, S. M., \& White, R. E.  1968, \aj, 73, 456
+% \bibitem[Kron et al.(1984)]{kro84} Kron, G. E., Hewitt, A. V.,
+%     \& Wasserman, L. H.  1984, \pasp, 96, 198
+% \bibitem[Lynden-Bell \& Wood(1968)]{lyn68} Lynden-Bell, D.,
+%     \& Wood, R.  1968, \mnras, 138, 495
+% \bibitem[Newell \& O'Neil(1978)]{new78} Newell, E. B.,
+%     \& O'Neil, E. J.  1978, \apjs, 37, 27
+% \bibitem[Ortolani et al.(1985)]{ort85} Ortolani, S., Rosino, L.,
+%     \& Sandage, A.  1985, \aj, 90, 473
+% \bibitem[Peterson(1976)]{pet76} Peterson, C. J.  1976, \aj, 81, 617
+% \bibitem[Rudnick et al.(2003)]{rudnick03} Rudnick, G. et al., 2003, \apj, 599, 847
+% \bibitem[Spitzer(1985)]{spi85} Spitzer, L.  1985, Dynamics of
+%     Star Clusters, J. Goodman \& P. Hut, Dordrecht: Reidel, 109
+% \bibitem[Treu et al.(2003)]{treu03} Treu, T. et al., 2003, \apj, 591, 53
+% \end{thebibliography}
 
-%% This example uses \plotone to include an EPS file scaled to
-%% 80% of its natural size with \epsscale. Its caption
-%% has been written to indicate that additional figure parts will be
-%% available in the electronic journal.
+% \clearpage
 
-\begin{figure}
-\epsscale{.80}
-\plotone{f1.eps}
-\caption{Derived spectra for 3C138 \citep[see][]{heiles03}. Plots for all sources are available
-in the electronic edition of {\it The Astrophysical Journal}.\label{fig1}}
-\end{figure}
-
-\clearpage
-
-%% Here we use \plottwo to present two versions of the same figure,
-%% one in black and white for print the other in RGB color
-%% for online presentation. Note that the caption indicates
-%% that a color version of the figure will be available online.
-%%
-
-\begin{figure}
-\plottwo{f2.eps}{f2_color.eps}
-\caption{A panel taken from Figure 2 of \citet{rudnick03}.
-See the electronic edition of the Journal for a color version
-of this figure.\label{fig2}}
-\end{figure}
-
-%% This figure uses \includegraphics to scale and rotate the still frame
-%% for an mpeg animation.
-
-\begin{figure}
-\includegraphics[angle=90,scale=.50]{f3.eps}
-\caption{Animation still frame taken from \citet{kim03}.
-This figure is also available as an mpeg
-animation in the electronic edition of the
-{\it Astrophysical Journal}.}
-\end{figure}
-
-%% If you are not including electonic art with your submission, you may
-%% mark up your captions using the \figcaption command. See the
-%% User Guide for details.
-%%
-%% No more than seven \figcaption commands are allowed per page,
-%% so if you have more than seven captions, insert a \clearpage
-%% after every seventh one.
-
-%% Tables should be submitted one per page, so put a \clearpage before
-%% each one.
-
-%% Two options are available to the author for producing tables:  the
-%% deluxetable environment provided by the AASTeX package or the LaTeX
-%% table environment.  Use of deluxetable is preferred.
-%%
-
-%% Three table samples follow, two marked up in the deluxetable environment,
-%% one marked up as a LaTeX table.
-
-%% In this first example, note that the \tabletypesize{}
-%% command has been used to reduce the font size of the table.
-%% We also use the \rotate command to rotate the table to
-%% landscape orientation since it is very wide even at the
-%% reduced font size.
-%%
-%% Note also that the \label command needs to be placed
-%% inside the \tablecaption.
-
-%% This table also includes a table comment indicating that the full
-%% version will be available in machine-readable format in the electronic
-%% edition.
-
-\clearpage
-
-\begin{deluxetable}{ccrrrrrrrrcrl}
-\tabletypesize{\scriptsize}
-\rotate
-\tablecaption{Sample table taken from \citet{treu03}\label{tbl-1}}
-\tablewidth{0pt}
-\tablehead{
-\colhead{POS} & \colhead{chip} & \colhead{ID} & \colhead{X} & \colhead{Y} &
-\colhead{RA} & \colhead{DEC} & \colhead{IAU$\pm$ $\delta$ IAU} &
-\colhead{IAP1$\pm$ $\delta$ IAP1} & \colhead{IAP2 $\pm$ $\delta$ IAP2} &
-\colhead{star} & \colhead{E} & \colhead{Comment}
-}
-\startdata
-0 & 2 & 1 & 1370.99 & 57.35    &   6.651120 &  17.131149 & 21.344$\pm$0.006  & 2
-4.385$\pm$0.016 & 23.528$\pm$0.013 & 0.0 & 9 & -    \\
-0 & 2 & 2 & 1476.62 & 8.03     &   6.651480 &  17.129572 & 21.641$\pm$0.005  & 2
-3.141$\pm$0.007 & 22.007$\pm$0.004 & 0.0 & 9 & -    \\
-0 & 2 & 3 & 1079.62 & 28.92    &   6.652430 &  17.135000 & 23.953$\pm$0.030  & 2
-4.890$\pm$0.023 & 24.240$\pm$0.023 & 0.0 & - & -    \\
-0 & 2 & 4 & 114.58  & 21.22    &   6.655560 &  17.148020 & 23.801$\pm$0.025  & 2
-5.039$\pm$0.026 & 24.112$\pm$0.021 & 0.0 & - & -    \\
-0 & 2 & 5 & 46.78   & 19.46    &   6.655800 &  17.148932 & 23.012$\pm$0.012  & 2
-3.924$\pm$0.012 & 23.282$\pm$0.011 & 0.0 & - & -    \\
-0 & 2 & 6 & 1441.84 & 16.16    &   6.651480 &  17.130072 & 24.393$\pm$0.045  & 2
-6.099$\pm$0.062 & 25.119$\pm$0.049 & 0.0 & - & -    \\
-0 & 2 & 7 & 205.43  & 3.96     &   6.655520 &  17.146742 & 24.424$\pm$0.032  & 2
-5.028$\pm$0.025 & 24.597$\pm$0.027 & 0.0 & - & -    \\
-0 & 2 & 8 & 1321.63 & 9.76     &   6.651950 &  17.131672 & 22.189$\pm$0.011  & 2
-4.743$\pm$0.021 & 23.298$\pm$0.011 & 0.0 & 4 & edge \\
-\enddata
-%% Text for table notes should follow after the \enddata but before
-%% the \end{deluxetable}. Make sure there is at least one \tablenotemark
-%% in the table for each \tablenotetext.
-\tablecomments{Table \ref{tbl-1} is published in its entirety in the
-electronic edition of the {\it Astrophysical Journal}.  A portion is
-shown here for guidance regarding its form and content.}
-\tablenotetext{a}{Sample footnote for table~\ref{tbl-1} that was generated
-with the deluxetable environment}
-\tablenotetext{b}{Another sample footnote for table~\ref{tbl-1}}
-\end{deluxetable}
-
-%% If you use the table environment, please indicate horizontal rules using
-%% \tableline, not \hline.
-%% Do not put multiple tabular environments within a single table.
-%% The optional \label should appear inside the \caption command.
-
-\clearpage
-
-\begin{table}
-\begin{center}
-\caption{More terribly relevant tabular information.\label{tbl-2}}
-\begin{tabular}{crrrrrrrrrrr}
-\tableline\tableline
-Star & Height & $d_{x}$ & $d_{y}$ & $n$ & $\chi^2$ & $R_{maj}$ & $R_{min}$ &
-\multicolumn{1}{c}{$P$\tablenotemark{a}} & $P R_{maj}$ & $P R_{min}$ &
-\multicolumn{1}{c}{$\Theta$\tablenotemark{b}} \\
-\tableline
-1 &33472.5 &-0.1 &0.4  &53 &27.4 &2.065  &1.940 &3.900 &68.3 &116.2 &-27.639\\
-2 &27802.4 &-0.3 &-0.2 &60 &3.7  &1.628  &1.510 &2.156 &6.8  &7.5 &-26.764\\
-3 &29210.6 &0.9  &0.3  &60 &3.4  &1.622  &1.551 &2.159 &6.7  &7.3 &-40.272\\
-4 &32733.8 &-1.2\tablenotemark{c} &-0.5 &41 &54.8 &2.282  &2.156 &4.313 &117.4 &78.2 &-35.847\\
-5 & 9607.4 &-0.4 &-0.4 &60 &1.4  &1.669\tablenotemark{c}  &1.574 &2.343 &8.0  &8.9 &-33.417\\
-6 &31638.6 &1.6  &0.1  &39 &315.2 & 3.433 &3.075 &7.488 &92.1 &25.3 &-12.052\\
-\tableline
-\end{tabular}
-%% Any table notes must follow the \end{tabular} command.
-\tablenotetext{a}{Sample footnote for table~\ref{tbl-2} that was
-generated with the \LaTeX\ table environment}
-\tablenotetext{b}{Yet another sample footnote for table~\ref{tbl-2}}
-\tablenotetext{c}{Another sample footnote for table~\ref{tbl-2}}
-\tablecomments{We can also attach a long-ish paragraph of explanatory
-material to a table.}
-\end{center}
-\end{table}
-
-%% If the table is more than one page long, the width of the table can vary
-%% from page to page when the default \tablewidth is used, as below.  The
-%% individual table widths for each page will be written to the log file; a
-%% maximum tablewidth for the table can be computed from these values.
-%% The \tablewidth argument can then be reset and the file reprocessed, so
-%% that the table is of uniform width throughout. Try getting the widths
-%% from the log file and changing the \tablewidth parameter to see how
-%% adjusting this value affects table formatting.
-
-%% The \dataset{} macro has also been applied to a few of the objects to
-%% show how many observations can be tagged in a table.
-
-\clearpage
-
-\begin{deluxetable}{lrrrrcrrrrr}
-\tablewidth{0pt}
-\tablecaption{Literature Data for Program Stars}
-\tablehead{
-\colhead{Star}           & \colhead{V}      &
-\colhead{b$-$y}          & \colhead{m$_1$}  &
-\colhead{c$_1$}          & \colhead{ref}    &
-\colhead{T$_{\rm eff}$}  & \colhead{log g}  &
-\colhead{v$_{\rm turb}$} & \colhead{[Fe/H]} &
-\colhead{ref}}
-\startdata
-HD 97 & 9.7& 0.51& 0.15& 0.35& 2 & \nodata & \nodata & \nodata & $-1.50$ & 2 \\
-& & & & & & 5015 & \nodata & \nodata & $-1.50$ & 10 \\
-\dataset[ADS/Sa.HST#O6H04VAXQ]{HD 2665} & 7.7& 0.54& 0.09& 0.34& 2 & \nodata & \nodata & \nodata & $-2.30$ & 2 \\
-& & & & & & 5000 & 2.50 & 2.4 & $-1.99$ & 5 \\
-& & & & & & 5120 & 3.00 & 2.0 & $-1.69$ & 7 \\
-& & & & & & 4980 & \nodata & \nodata & $-2.05$ & 10 \\
-HD 4306 & 9.0& 0.52& 0.05& 0.35& 20, 2& \nodata & \nodata & \nodata & $-2.70$ & 2 \\
-& & & & & & 5000 & 1.75 & 2.0 & $-2.70$ & 13 \\
-& & & & & & 5000 & 1.50 & 1.8 & $-2.65$ & 14 \\
-& & & & & & 4950 & 2.10 & 2.0 & $-2.92$ & 8 \\
-& & & & & & 5000 & 2.25 & 2.0 & $-2.83$ & 18 \\
-& & & & & & \nodata & \nodata & \nodata & $-2.80$ & 21 \\
-& & & & & & 4930 & \nodata & \nodata & $-2.45$ & 10 \\
-HD 5426 & 9.6& 0.50& 0.08& 0.34& 2 & \nodata & \nodata & \nodata & $-2.30$ & 2 \\
-\dataset[ADS/Sa.HST#O5F654010]{HD 6755} & 7.7& 0.49& 0.12& 0.28& 20, 2& \nodata & \nodata & \nodata & $-1.70$ & 2 \\
-& & & & & & 5200 & 2.50 & 2.4 & $-1.56$ & 5 \\
-& & & & & & 5260 & 3.00 & 2.7 & $-1.67$ & 7 \\
-& & & & & & \nodata & \nodata & \nodata & $-1.58$ & 21 \\
-& & & & & & 5200 & \nodata & \nodata & $-1.80$ & 10 \\
-& & & & & & 4600 & \nodata & \nodata & $-2.75$ & 10 \\
-\dataset[ADS/Sa.HST#O56D06010]{HD 94028} & 8.2& 0.34& 0.08& 0.25& 20 & 5795 & 4.00 & \nodata & $-1.70$ & 22 \\
-& & & & & & 5860 & \nodata & \nodata & $-1.70$ & 4 \\
-& & & & & & 5910 & 3.80 & \nodata & $-1.76$ & 15 \\
-& & & & & & 5800 & \nodata & \nodata & $-1.67$ & 17 \\
-& & & & & & 5902 & \nodata & \nodata & $-1.50$ & 11 \\
-& & & & & & 5900 & \nodata & \nodata & $-1.57$ & 3 \\
-& & & & & & \nodata & \nodata & \nodata & $-1.32$ & 21 \\
-HD 97916 & 9.2& 0.29& 0.10& 0.41& 20 & 6125 & 4.00 & \nodata & $-1.10$ & 22 \\
-& & & & & & 6160 & \nodata & \nodata & $-1.39$ & 3 \\
-& & & & & & 6240 & 3.70 & \nodata & $-1.28$ & 15 \\
-& & & & & & 5950 & \nodata & \nodata & $-1.50$ & 17 \\
-& & & & & & 6204 & \nodata & \nodata & $-1.36$ & 11 \\
-\cutinhead{This is a cut-in head}
-+26\arcdeg2606& 9.7&0.34&0.05&0.28&20,11& 5980 & \nodata & \nodata &$<-2.20$ & 19 \\
-& & & & & & 5950 & \nodata & \nodata & $-2.89$ & 24 \\
-+26\arcdeg3578& 9.4&0.31&0.05&0.37&20,11& 5830 & \nodata & \nodata & $-2.60$ & 4 \\
-& & & & & & 5800 & \nodata & \nodata & $-2.62$ & 17 \\
-& & & & & & 6177 & \nodata & \nodata & $-2.51$ & 11 \\
-& & & & & & 6000 & 3.25 & \nodata & $-2.20$ & 22 \\
-& & & & & & 6140 & 3.50 & \nodata & $-2.57$ & 15 \\
-+30\arcdeg2611& 9.2&0.82&0.33&0.55& 2 & \nodata & \nodata & \nodata & $-1.70$ & 2 \\
-& & & & & & 4400 & 1.80 & \nodata & $-1.70$ & 12 \\
-& & & & & & 4400 & 0.90 & 1.7 & $-1.20$ & 14 \\
-& & & & & & 4260 & \nodata & \nodata & $-1.55$ & 10 \\
-+37\arcdeg1458& 8.9&0.44&0.07&0.22&20,11& 5296 & \nodata & \nodata & $-2.39$ & 11 \\
-& & & & & & 5420 & \nodata & \nodata & $-2.43$ & 3 \\
-+58\arcdeg1218&10.0&0.51&0.03&0.36& 2 & \nodata & \nodata & \nodata & $-2.80$ & 2 \\
-& & & & & & 5000 & 1.10 & 2.2 & $-2.71$ & 14 \\
-& & & & & & 5000 & 2.20 & 1.8 & $-2.46$ & 5 \\
-& & & & & & 4980 & \nodata & \nodata & $-2.55$ & 10 \\
-+72\arcdeg0094&10.2&0.31&0.09&0.26&12 & 6160 & \nodata & \nodata & $-1.80$ & 19 \\
-\sidehead{I'm a side head:}
-G5--36 & 10.8& 0.40& 0.07& 0.28& 20 & \nodata & \nodata & \nodata & $-1.19$ & 21 \\
-G18--54 & 10.7& 0.37& 0.08& 0.28& 20 & \nodata & \nodata & \nodata & $-1.34$ & 21 \\
-G20--08 & 9.9& 0.36& 0.05& 0.25& 20,11& 5849 & \nodata & \nodata & $-2.59$ & 11 \\
-& & & & & & \nodata & \nodata & \nodata & $-2.03$ & 21 \\
-G20--15 & 10.6& 0.45& 0.03& 0.27& 20,11& 5657 & \nodata & \nodata & $-2.00$ & 11 \\
-& & & & & & 6020 & \nodata & \nodata & $-1.56$ & 3 \\
-& & & & & & \nodata & \nodata & \nodata & $-1.58$ & 21 \\
-G21--22 & 10.7& 0.38& 0.07& 0.27& 20,11& \nodata & \nodata & \nodata & $-1.23$ & 21 \\
-G24--03 & 10.5& 0.36& 0.06& 0.27& 20,11& 5866 & \nodata & \nodata & $-1.78$ & 11 \\
-& & & & & & \nodata & \nodata & \nodata & $-1.70$ & 21 \\
-G30--52 & 8.6& 0.50& 0.25& 0.27& 11 & 4757 & \nodata & \nodata & $-2.12$ & 11 \\
-& & & & & & 4880 & \nodata & \nodata & $-2.14$ & 3 \\
-G33--09 & 10.6& 0.41& 0.10& 0.28& 20 & 5575 & \nodata & \nodata & $-1.48$ & 11 \\
-G66--22 & 10.5& 0.46& 0.16& 0.28& 11 & 5060 & \nodata & \nodata & $-1.77$ & 3 \\
-& & & & & & \nodata & \nodata & \nodata & $-1.04$ & 21 \\
-G90--03 & 10.4& 0.37& 0.04& 0.29& 20 & \nodata & \nodata & \nodata & $-2.01$ & 21 \\
-LP 608--62\tablenotemark{a} & 10.5& 0.30& 0.07& 0.35& 11 & 6250 & \nodata &
-\nodata & $-2.70$ & 4 \\
-\enddata
-\tablenotetext{a}{Star LP 608--62 is also known as BD+1\arcdeg 2341p.  We will
-make this footnote extra long so that it extends over two lines.}
-%% You can append references to a table using the \tablerefs command.
-\tablerefs{
-(1) Barbuy, Spite, \& Spite 1985; (2) Bond 1980; (3) Carbon et al. 1987;
-(4) Hobbs \& Duncan 1987; (5) Gilroy et al. 1988: (6) Gratton \& Ortolani 1986;
-(7) Gratton \& Sneden 1987; (8) Gratton \& Sneden (1988); (9) Gratton \& Sneden 1991;
-(10) Kraft et al. 1982; (11) LCL, or Laird, 1990; (12) Leep \& Wallerstein 1981;
-(13) Luck \& Bond 1981; (14) Luck \& Bond 1985; (15) Magain 1987;
-(16) Magain 1989; (17) Peterson 1981; (18) Peterson, Kurucz, \& Carney 1990;
-(19) RMB; (20) Schuster \& Nissen 1988; (21) Schuster \& Nissen 1989b;
-(22) Spite et al. 1984; (23) Spite \& Spite 1986; (24) Hobbs \& Thorburn 1991;
-(25) Hobbs et al. 1991; (26) Olsen 1983.}
-\end{deluxetable}
-
-%% Tables may also be prepared as separate files. See the accompanying
-%% sample file table.tex for an example of an external table file.
-%% To include an external file in your main document, use the \input
-%% command. Uncomment the line below to include table.tex in this
-%% sample file. (Note that you will need to comment out the \documentclass,
-%% \begin{document}, and \end{document} commands from table.tex if you want
-%% to include it in this document.)
-
-%% \input{table}
 
 %% The following command ends your manuscript. LaTeX will ignore any text
 %% that appears after it.
@@ -1589,4 +1211,4 @@ make this footnote extra long so that it extends over two lines.}
 \end{document}
 
 %%
-%% End of file `sample.tex'.
+%% End of file
